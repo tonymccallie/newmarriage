@@ -1,2 +1,2 @@
-MarriageStrong App
+NewMarriage App
 ==================
