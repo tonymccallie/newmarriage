@@ -1,0 +1,30 @@
+<!-- Create tabs with an icon and label, using the tabs-positive style. Each tab's child <ion-nav-view> directive will have its own 
+  navigation history that also transitions its views in and out.
+-->
+<ion-tabs class="tabs-icon-top tabs-positive">
+
+	<ion-tab title="US-NESS" icon="icon threeleaf threeleaf-usness" ui-sref="menu.tabs.usness">
+		<ion-nav-view name="tab-home"></ion-nav-view>
+	</ion-tab>
+
+	<ion-tab title="CYCLES" icon="icon threeleaf threeleaf-cycles" ui-sref="menu.tabs.cycles">
+		<ion-nav-view name="tab-cycles"></ion-nav-view>
+	</ion-tab>
+	
+	<ion-tab title="4 STEPS" icon="icon threeleaf threeleaf-4steps" ui-sref="menu.tabs.4steps">
+		<ion-nav-view name="tab-4steps"></ion-nav-view>
+	</ion-tab>
+	
+	<ion-tab title="QUIZZES" icon="icon threeleaf threeleaf-quizzes" ui-sref="menu.tabs.quizzes">
+		<ion-nav-view name="tab-quizzes"></ion-nav-view>
+	</ion-tab>
+
+	<ion-tab title="DECISIONS" icon="icon threeleaf threeleaf-decisions" ui-sref="menu.tabs.decisions">
+		<ion-nav-view name="tab-decisions"></ion-nav-view>
+	</ion-tab>
+	
+	<ion-tab title="Static" href="#/tab/static" hidden="true">
+		<ion-nav-view name="tab-static"></ion-nav-view>
+	</ion-tab>
+	
+</ion-tabs>

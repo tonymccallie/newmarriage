@@ -1,0 +1,18 @@
+<ion-view view-title="Forgot Password">
+	<ion-content class="user_form" id="forgot_page" has-bouncing="false">
+		<div class="padding">
+			<img src="img/logo_tag_rev.png" class="logo" />
+			<form>
+				<div class="list list-inset">
+					<div class="item item-input">
+						<input ng-model="User.username" type="text" placeholder="USERNAME" />
+					</div>
+				</div>
+				<input ng-click="signup()" type="submit" value="Reset Password" class="button button-block button-positive" />
+			</form>
+			<div class="text-center">
+				<a ui-sref="login">Return to login</a>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

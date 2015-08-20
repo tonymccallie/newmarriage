@@ -1,0 +1,22 @@
+<ion-view view-title="US-ness">
+	<ion-nav-title>
+		<img src="img/logo.png" class="title-image" />
+	</ion-nav-title>
+	<ion-content>
+		<h2><img src="img/usness-icon-small.png" class="cycles-icon" />&nbsp;Welcome to MarriageStrong</h2>
+		<a ng-if="!user.User.picture" ui-sref="menu.tabs.photo">
+			<img src="img/upload-photo.jpg" alt="Usness" width="100%">
+		</a>
+		<img ng-if="user.User.picture" ng-src="{{DOMAIN + '/uploads/image_'+user.User.id+'.jpg'}}" width="100%">
+            <div class="padding">
+			<h1>Welcome</h1>
+			<p>It's time your marriage had it's own app. This is a fun way to learn what makes your marriage tick. We'll also help you find ways to make your marriage stronger.</p>
+			<p>Start by discovering what's unique about your relationship in the Us-ness section.  Then find out what happens during your conflicts and how to get out of them in the Cycles section.</p>
+			<p>The benefit and blessing of a strong marriage is waiting.</p>
+			<a ui-sref="menu.tabs.profile" class="button button-block button-positive">Set Up Your Profile</a>
+			<a ui-sref="menu.tabs.usness" class="button button-block button-calm">Discover Your US-Ness</a>
+			<a ui-sref="menu.tabs.cycles" class="button button-block button-calm">Define your pain and peace cycle</a>
+			<a ui-sref="menu.tabs.4steps" class="button button-block button-calm">Plan your 4 steps</a>
+		</div>
+	</ion-content>
+</ion-view>

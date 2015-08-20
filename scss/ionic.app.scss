@@ -1,0 +1,800 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+$positive: #8f2b21;
+//$dark: #808184;
+$calm: #808184;
+$lightGrey: #d0d2d3;
+
+//$font-default: "LatoBold";
+$font-default: "HelveticaNeue";
+$font-italic: "HelveticaNeueOblique";
+
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+@import "scss/fonts.scss";
+@import "scss/greyback.scss";
+
+@mixin transform($transforms) {
+	-moz-transform: $transforms;
+	-o-transform: $transforms;
+	-ms-transform: $transforms;
+	-webkit-transform: $transforms;
+	transform: $transforms;
+}
+
+@mixin rotate ($deg) {
+ 	@include transform(rotate(#{$deg}deg));
+}
+
+
+.light {
+	background: $light;
+	color: $dark;
+	a {
+		color: $positive;
+	}
+}
+
+.pane, .view, .menu-left {
+	background-image: url(../img/marriage-blur.jpg);
+	background-size: cover;
+	background-position: center top;
+}
+
+.tab-content .pane {
+	background: $light;
+}
+
+.whitebg {
+	background: #ffffff;
+}
+
+.menu-left {
+	font-family: $font-default;
+	.title {
+		text-align: left;
+		font-family: $font-default;
+		.threeleaf {
+			@include rotate(180);
+		}
+	}
+	.threeleaf {
+		font-weight: bold;
+	}
+	.item {
+		background: none;
+		border: none;
+		a {
+			color: $light;
+		}
+	}
+	.item-complex .item-content, .item-radio .item-content {
+		background: none;
+	}
+}
+
+body, h1, h2, h3, h4, h5, h6, input, button, select, textarea {
+	font-family: $font-default;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: $calm;
+}
+
+p {
+    text-align: justify;
+}
+
+h1 {
+    color: $positive;
+    font-weight: bolder;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bolder;
+    text-align: left;
+    padding: 6px 0px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    line-height: 20px;
+    
+    img {
+        vertical-align: sub;
+    }
+}
+
+h2 {
+    width: 100%;
+    background: $positive;
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    padding: 6px 0px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    line-height: 20px;
+    
+    img {
+        vertical-align: sub;
+    }
+}
+
+h3 {
+    
+    padding-left: 14px;
+    color: $positive;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+h4 {
+    width: 100%;
+    background: $lightGrey;
+    color: $calm;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    padding: 20px 0px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+h5 {
+    font-size: 12px;
+    font-weight: bolder;
+    line-height: 18px;
+}
+
+h6 {
+    font-size: 14px;
+    font-weight: bolder;
+    line-height: 18px;
+    color: $positive;
+}
+
+
+hr {
+    border: 0;
+    height: 1px;
+    background: $lightGrey;
+}
+
+i {
+	font-family: $font-italic;
+}
+
+input[placeholder] {
+	//color: $dark;
+}
+
+.checkbox input:before, .checkbox-icon:before {
+	border-radius: 0px;
+}
+
+.padding {
+	padding: 15px;
+	a {
+		color: $positive;
+		text-decoration: none;
+		font-family: "HelveticaNeue";
+	}
+	.button {
+		font-family: "HelveticaNeue";
+		color: $light;
+	}
+}
+
+.scaleVid {
+	position:relative;
+	height:0;
+}
+
+.ratio16x9 {
+	padding-bottom:56.25%;
+}
+
+.ratio4x3 {
+	padding-bottom:75%;
+}
+
+.audioPlayerRatio {
+	padding-bottom:15%;
+}
+
+.scaleVid {
+	background: url(../img/loading.gif) center center no-repeat #9d9d9d;
+	background-size: 20%;
+}
+
+.scaleVid div,
+.scaleVid object,
+.scaleVid embed,
+.scaleVid iframe,
+.scaleVid video {
+	position:absolute !important;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+
+.title-image {
+	margin-top: 7px;
+	height: 30px;
+}
+
+.threeleaf {
+	font-family: 'Threeleaf';
+	font-size: 1.5em;
+	vertical-align: -.15em;
+	font-weight: normal;
+}
+
+.threeleaf-separator {
+	color: $light;
+	font-size: 18px;
+	text-align: center;
+	.threeleaf {
+		vertical-align: -.13em;
+	}
+	background: $positive;
+	line-height: 30px;
+	padding: 10px;
+	margin-top: -5px;
+}
+
+.tabs {
+	height: 58px;
+	padding-top: 5px;
+}
+
+.tabs-icon-top > .tabs .tab-item, .tabs-icon-top.tabs .tab-item, .tabs-icon-bottom > .tabs .tab-item, .tabs-icon-bottom.tabs .tab-item {
+	line-height: 16px;
+}
+
+.tab-item .threeleaf {
+	font-size: 40px;
+	line-height: 38px;
+	font-family: $font-default;
+}
+
+.tab-title {
+	font-family: $font-default;
+}
+
+.threeleaf-usness {content: url(../img/icon_usness.png);}
+.threeleaf-cycles {content: url(../img/icon_cycles.png);}
+.threeleaf-4steps {content: url(../img/icon_4steps.png);}
+.threeleaf-quizzes {content: url(../img/icon_quizzes.png);}
+.threeleaf-decisions {content: url(../img/icon_decisions.png);}
+
+
+.user_form {
+	.logo {
+		width: 100%;
+	}
+	
+	.padding {
+		padding: 60px 40px 40px;
+	}
+	
+	.list, .list-inset {
+		border-radius: 0px;
+	}
+	
+	.item {
+		border-radius: 0px;
+		background: none;
+		color: $light;
+		border: none;
+	}
+	
+	.item-checkbox {
+		padding: 5px 5px 5px 60px;
+	}
+	
+	.button {
+		border-radius: 30px;
+		border-width: 0px;
+	}
+}
+
+.button {
+    border-radius: 50px;
+    text-transform: uppercase;
+    border-width: 0;
+    padding: 5px 10px;
+}
+
+.icon-calm {
+    color: $calm;
+}
+
+.datepicker {
+	font-size: 22px;
+	color: $calm;
+	border: solid 1px $lightGrey;
+	padding: 15px 10px 13px 10px;
+}
+
+.item-checkbox {
+    border-width: 0px;
+    font-size: 13px;
+}
+
+.grey_bg {
+    background: $lightGrey;
+    color: $calm;
+}
+
+input[type="radio"] {
+    margin-left: 14px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 10px;
+}
+
+.personalityResults p {
+    padding-left: 14px;
+    margin-bottom: 18px;
+}
+
+.usnessGiftsForm {
+    
+    .item {
+    font-size: 12px;
+    }
+    
+    strong {
+        color: $positive;
+        font-size: 16px;
+    }
+}
+
+.circle-number-container {
+    float: left;
+    width: 70px;
+}
+
+.circle-number {
+    font-size: 36px;
+    width: 60px;
+    height: 60px;
+    border: 1px $calm solid;
+    border-radius: 30px;
+    display: inline-block;
+    text-align: center;
+    line-height: 62px;
+    margin-right: 10px;
+}
+
+.circle-number-text-to-the-right {
+       
+}
+
+.gifts-list li {
+    font-size: 24px;
+}
+
+.step-list li {
+    font-size: 28px;
+    text-align: center;
+}
+
+.paragraph-list {
+    font-size: 13px;
+    line-height: 17px;
+    padding: 10px 15px;
+    border-bottom: 1px $lightGrey solid;
+}
+
+.cycles-pain, .cycles-peace {
+
+    li {
+    width: 54%;
+    float:left;
+    display:inline;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0px;
+    margin-left: -4%;
+    }
+    
+    .checkbox {
+        padding: 6px 0px;
+    }
+    
+
+    
+    .item-checkbox  {
+        padding-left: 44px;
+    }
+    
+    #measure {
+        width: 100%;
+    }
+    
+   
+}
+
+.cyclesCopes {
+    
+    li {
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 0px;
+    }
+    
+    .checkbox {
+        padding: 6px 0px;
+    }
+    
+
+    
+    .item-checkbox  {
+        padding-left: 44px;
+    }
+    
+    #measure {
+        width: 100%;
+    }
+    
+}
+
+.tip-text {
+    display: block;
+    clear: both;
+    padding-top: 15px;
+}
+
+.cycle_circle {
+    border: 1px $lightGrey solid;
+    width: 300px;
+    height: 300px;
+    display: block;
+    border-radius: 150px;
+}
+
+.small-button-text{
+    font-size: 10px;
+    line-height: 10px;
+    font-family: $font-italic;
+    line-height: 9px;
+}
+
+.two-line-button {
+    line-height: 16px;
+}
+
+li.item  {
+    white-space:normal;
+
+}
+
+.item-stacked-label {
+    font-size: 12px;
+    color: $calm;
+}
+
+.decisions .grey_bg {
+    font-size: 20px;
+    padding-top: 7px;
+    border-top: 1px solid $calm;
+    }
+
+.green-check.checkbox input:before {
+    border-radius: 0px;
+    background-color: #7db584;
+    border-radius: 30px;
+}
+    
+.yellow-check.checkbox input:before {
+    border-radius: 0px;
+    background-color: #f7b568;
+    border-radius: 30px;
+}
+
+.red-check.checkbox input:before {
+    border-radius: 0px;
+    background-color: #ed7479;
+    border-radius: 30px;
+}
+
+.quiz-left-text {
+    text-align: right;
+    font-size: 10px;
+    float: right;
+}
+
+.quizzesUnessForm {
+
+    input[type="radio"] {
+        font-size: 24px;
+    }
+    
+    label {
+        line-height: 30px;
+    }
+    
+    h3 {
+    text-align: center;
+    font-size: 22px;
+    line-height: 20px;
+    }
+}
+
+.red-circle {
+    font-size: 36px;
+    width: 60px;
+    height: 60px;
+    border: 0px $calm solid;
+    border-radius: 30px;
+    display: inline-block;
+    text-align: center;
+    line-height: 62px;
+    margin-right: 10px;
+    text-indent: -3000px;
+    background: #ed7479;
+    vertical-align: middle;
+}
+
+.green-circle {
+    font-size: 36px;
+    width: 60px;
+    height: 60px;
+    border: 0px $calm solid;
+    border-radius: 30px;
+    display: inline-block;
+    text-align: center;
+    line-height: 62px;
+    margin-right: 10px;
+    text-indent: -3000px;
+    background: #7db584;
+}
+
+.orange-circle {
+    font-size: 36px;
+    width: 60px;
+    height: 60px;
+    border: 0px $calm solid;
+    border-radius: 30px;
+    display: inline-block;
+    text-align: center;
+    line-height: 62px;
+    margin-right: 10px;
+    text-indent: -3000px;
+    background: #f7b568;
+}
+
+.yellow-circle {
+    font-size: 36px;
+    width: 60px;
+    height: 60px;
+    border: 0px $calm solid;
+    border-radius: 30px;
+    display: inline-block;
+    text-align: center;
+    line-height: 62px;
+    margin-right: 10px;
+    text-indent: -3000px;
+    background: #fae76b;
+}
+
+.circle-selceted {
+    border: 5px $calm solid;
+}
+
+.quizzes-results-list li {
+    font-size: 12px;
+}
+
+.quizzes-circle-container {
+    float: left;
+    width: 25%;
+}
+
+.quizzes-circle-text {
+    float: left;
+   width: 75%;
+}
+
+
+//Cylces Circles
+
+.cycles {
+    display: block;
+    position: relative;
+    padding-top: 120;
+    width: 100%;
+    
+    .padding {
+
+    }
+}
+
+.cycles-results {
+    display: block;
+    position: absolute;
+    margin: 23% 10% 5%;
+    line-height: 15px;
+    
+    h5 {
+        text-transform: uppercase;
+        line-height: 10px;
+        margin-bottom: 0px;
+        color: $positive;
+        padding-bottom: 5px;
+    }
+    
+    img {
+        padding: 28%;
+    }
+
+}
+
+.circle-cycle {
+    display: block;
+    position: relative;
+    top: 30px;
+	margin-bottom: 30px;
+}
+
+
+.top-left {
+    width: 25%;
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+}
+.top-middle {
+    width: 50%;
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+    min-height: 80px;
+}
+.top-right {
+    width: 25%;
+    float: left;
+    text-align: center;
+    
+    img {
+        text-align: left;
+    }
+}
+
+.middle-left {
+    width: 50%;
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+    min-height: 80px;
+}
+.middle-middle {
+    width: 0%;
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+}
+.middle-right {
+    width: 50%;
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+    min-height: 80px;
+}
+
+.bottom-left {
+    width: 25%;
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+}
+.bottom-middle {
+    width: 50%;
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+    min-height: 80px;
+}
+.bottom-right {
+    width: 25%;
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.signup {
+    padding: 15px 0px;
+    font-size: 16px;
+    text-transform: uppercase;
+    a {
+        text-decoration: none;
+        
+        font-size: 20px;
+        font-weight: bolder;
+    }
+}
+
+.disclaimer {
+    color: #ffffff;
+    
+    a {
+        color: #ffffff;
+        font-weight: bolder;
+    }
+}
+
+.profile-name {
+    font-size: 22px;
+    border: 1px $lightGrey solid;
+    width: 100%;
+    padding: 15px 10px 13px 10px;
+    display: block;
+}
+
+.steps-list li {
+    font-size: 12px; 
+    letter-spacing: 0px;
+}
+
+.foursteps-results {
+    padding: 10px 15px 25px; 
+    border-bottom: 1px $lightGrey solid;
+}
+
+.foursteps-results-heading {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: $positive;
+    padding-bottom: 5px;
+}
+
+.foursteps-results-answer {
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.quiz-results {
+    padding: 10px 30px 25px;  
+    border-bottom: 1px $lightGrey solid;
+}
+
+.quiz-results-category {
+    text-transform: uppercase;
+    font-size: 16px;
+    color: $positive;
+}
+
+.quiz-results-category-second {
+    padding-top: 20px;   
+}
+
+
+
+    
+
+
