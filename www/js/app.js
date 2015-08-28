@@ -67,7 +67,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 	.state('menu', {
 		url: "/menu",
 		abstract: true,
-		templateUrl: "templates/menu.html",
+		templateUrl: "templates/system/menu.html",
 		controller: 'AppController',
 		resolve: {
 			user: function (UserService) {
@@ -82,7 +82,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 		abstract: true,
 		views: {
 			'menuContent': {
-				templateUrl: "templates/tabs.html",
+				templateUrl: "templates/system/tabs.html",
 			}
 		}
 	})
@@ -97,11 +97,227 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 		}
 	})
 	
+	.state('menu.tabs.pain', {
+		url: "/pain",
+		views: {
+			'tab-pain': {
+				templateUrl: "templates/pain/home.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.pain_feels', {
+		url: "/pain-feels",
+		views: {
+			'tab-pain': {
+				templateUrl: "templates/pain/pain_feels.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.pain_feels_results', {
+		url: "/pain-feels-results",
+		views: {
+			'tab-pain': {
+				templateUrl: "templates/pain/pain_feels_results.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.pain_spouse_feels', {
+		url: "/pain-spouse-feels",
+		views: {
+			'tab-pain': {
+				templateUrl: "templates/pain/pain_spouse_feels.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.pain_cycle', {
+		url: "/pain-cycle",
+		views: {
+			'tab-pain': {
+				templateUrl: "templates/pain/pain_cycle.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.peace', {
+		url: "/peace",
+		views: {
+			'tab-peace': {
+				templateUrl: "templates/peace/home.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.peace_truths', {
+		url: "/peace-truths",
+		views: {
+			'tab-peace': {
+				templateUrl: "templates/peace/peace_truths.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.peace_truths_results', {
+		url: "/peace-truths-results",
+		views: {
+			'tab-peace': {
+				templateUrl: "templates/peace/peace_truths_results.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.peace_spouse_truths', {
+		url: "/peace-spouse-truths",
+		views: {
+			'tab-peace': {
+				templateUrl: "templates/peace/peace_spouse_truths.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.peace_cycle', {
+		url: "/peace-cycle",
+		views: {
+			'tab-peace': {
+				templateUrl: "templates/peace/peace_cycle.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.4steps', {
+		url: "/4steps",
+		views: {
+			'tab-4steps': {
+				templateUrl: "templates/4steps/home.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.4steps_info', {
+		url: "/4steps-info",
+		views: {
+			'tab-4steps': {
+				templateUrl: "templates/4steps/4steps_info.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.4steps_choose', {
+		url: "/4steps-choose",
+		views: {
+			'tab-4steps': {
+				templateUrl: "templates/4steps/4steps_choose.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.4steps_excercise', {
+		url: "/4steps-excercise",
+		views: {
+			'tab-4steps': {
+				templateUrl: "templates/4steps/4steps_excercise.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.teamwork', {
+		url: "/teamwork",
+		views: {
+			'tab-teamwork': {
+				templateUrl: "templates/teamwork/home.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.teamwork_info', {
+		url: "/teamwork-info",
+		views: {
+			'tab-teamwork': {
+				templateUrl: "templates/teamwork/teamwork_info.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.teamwork_video', {
+		url: "/teamwork-video",
+		views: {
+			'tab-teamwork': {
+				templateUrl: "templates/teamwork/teamwork_video.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.teamwork_excercise', {
+		url: "/teamwork-excercise",
+		views: {
+			'tab-teamwork': {
+				templateUrl: "templates/teamwork/teamwork_excercise.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.growth', {
+		url: "/growth",
+		views: {
+			'tab-growth': {
+				templateUrl: "templates/growth/home.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.growth_values', {
+		url: "/growth-values",
+		views: {
+			'tab-growth': {
+				templateUrl: "templates/growth/growth_values.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.growth_vision', {
+		url: "/growth-vision",
+		views: {
+			'tab-growth': {
+				templateUrl: "templates/growth/growth_vision.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.growth_quiz', {
+		url: "/growth-quiz",
+		views: {
+			'tab-growth': {
+				templateUrl: "templates/growth/growth_quiz.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.growth_quiz_results', {
+		url: "/growth-quiz-results",
+		views: {
+			'tab-growth': {
+				templateUrl: "templates/growth/growth_quiz_results.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.growth_90days', {
+		url: "/growth-90days",
+		views: {
+			'tab-growth': {
+				templateUrl: "templates/growth/growth_90days.html",
+			}
+		}
+	})
+	
 	.state('menu.tabs.about', {
 		url: "/about",
 		views: {
 			'tab-static': {
-				templateUrl: "templates/about.html",
+				templateUrl: "templates/static/about.html",
 			}
 		}
 	})
@@ -110,7 +326,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 		url: "/resources",
 		views: {
 			'tab-static': {
-				templateUrl: "templates/resources.html",
+				templateUrl: "templates/static/resources.html",
 			}
 		}
 	})
@@ -119,7 +335,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 		url: "/products",
 		views: {
 			'tab-static': {
-				templateUrl: "templates/products.html",
+				templateUrl: "templates/static/products.html",
 			}
 		}
 	})
@@ -128,7 +344,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 		url: "/app_info",
 		views: {
 			'tab-static': {
-				templateUrl: "templates/app_info.html",
+				templateUrl: "templates/static/app_info.html",
 			}
 		}
 	})
@@ -138,7 +354,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 		cache: false,
 		views: {
 			'tab-static': {
-				templateUrl: "templates/profile.html",
+				templateUrl: "templates/user/profile.html",
 				controller: "UserController"
 			}
 		}
@@ -148,37 +364,37 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 		url: "/notifications",
 		views: {
 			'tab-static': {
-				templateUrl: "templates/notifications.html",
+				templateUrl: "templates/static/notifications.html",
 			}
 		}
 	})
 
 	.state('login', {
 		url: "/login",
-		templateUrl: "templates/login.html",
+		templateUrl: "templates/user/login.html",
 		controller: 'LoginController'
 	})
 
 	.state('signup', {
 		url: "/signup",
-		templateUrl: "templates/signup.html",
+		templateUrl: "templates/user/signup.html",
 		controller: 'SignupController'
 	})
 
 	.state('forgot', {
 		url: "/forgot",
-		templateUrl: "templates/forgot.html",
+		templateUrl: "templates/user/forgot.html",
 		controller: 'ForgotController'
 	})
 	
 	.state('terms', {
 		url: "/terms",
-		templateUrl: "templates/terms.html"
+		templateUrl: "templates/static/terms.html"
 	})
 	
 	.state('privacy', {
 		url: "/privacy",
-		templateUrl: "templates/privacy.html"
+		templateUrl: "templates/static/privacy.html"
 	})
 
 	$urlRouterProvider.otherwise('/menu/tabs/home');

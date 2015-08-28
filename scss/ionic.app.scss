@@ -15,7 +15,7 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
-$positive: #8f2b21;
+$positive: #65afb4;;
 //$dark: #808184;
 $calm: #808184;
 $lightGrey: #d0d2d3;
@@ -56,17 +56,23 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 .pane, .view, .menu-left {
-	background-image: url(../img/marriage-blur.jpg);
+	background-image: url(../img/hideaways_bkgd.jpg);
 	background-size: cover;
 	background-position: center top;
 }
 
 .tab-content .pane {
-	background: $light;
+	//background: $light;
 }
 
 .whitebg {
 	background: #ffffff;
+}
+
+.white-block {
+	padding: 10px;
+	background: $light;
+	margin-bottom: 20px;
 }
 
 .menu-left {
