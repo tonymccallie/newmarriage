@@ -1,7 +1,7 @@
 To start server/liveedit
     Open terminal and copy/paste this:
     
-cd ~/Sites/marriagestrong
+cd ~/Sites/newmarriage
 git pull
 ionic serve
 
