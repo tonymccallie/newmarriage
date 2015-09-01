@@ -9701,6 +9701,12 @@ a.button {
   background-size: cover;
   background-position: center top; }
 
+.tab-item {
+  opacity: 1; }
+
+.tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
+  opacity: 0.7; }
+
 .whitebg {
   background: #ffffff; }
 
@@ -9896,6 +9902,9 @@ i {
 
 .threeleaf-growth {
   content: url(../img/5_days_icons_day5.png); }
+
+#login_page input[type="text"], #login_page input[type="password"], #login_page input[type="email"] {
+  color: #fff; }
 
 .user_form .logo {
   width: 100%; }
@@ -10297,9 +10306,8 @@ li.item {
   height: 65px; }
 
 .bar-stable .button.button-clear {
-  line-height: 130px;
   color: #fff;
-  margin-top: 11px;
+  margin-top: 6px;
   margin-right: 5px; }
 
 .bar .title {
