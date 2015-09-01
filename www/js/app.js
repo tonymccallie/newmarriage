@@ -106,38 +106,38 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 		}
 	})
 	
-	.state('menu.tabs.pain_feels', {
-		url: "/pain-feels",
+	.state('menu.tabs.pain_my_cycle', {
+		url: "/pain-my-cycle",
 		views: {
 			'tab-pain': {
-				templateUrl: "templates/pain/pain_feels.html",
+				templateUrl: "templates/pain/pain_my_cycle.html",
 			}
 		}
 	})
 	
-	.state('menu.tabs.pain_feels_results', {
-		url: "/pain-feels-results",
+	.state('menu.tabs.pain_my_results', {
+		url: "/pain-my-results",
 		views: {
 			'tab-pain': {
-				templateUrl: "templates/pain/pain_feels_results.html",
+				templateUrl: "templates/pain/pain_my_results.html",
 			}
 		}
 	})
 	
-	.state('menu.tabs.pain_spouse_feels', {
-		url: "/pain-spouse-feels",
+	.state('menu.tabs.pain_spouse_cycle', {
+		url: "/pain-spouse-cycle",
 		views: {
 			'tab-pain': {
-				templateUrl: "templates/pain/pain_spouse_feels.html",
+				templateUrl: "templates/pain/pain_spouse_cycle.html",
 			}
 		}
 	})
 	
-	.state('menu.tabs.pain_cycle', {
-		url: "/pain-cycle",
+	.state('menu.tabs.pain_our_results', {
+		url: "/pain-our-results",
 		views: {
 			'tab-pain': {
-				templateUrl: "templates/pain/pain_cycle.html",
+				templateUrl: "templates/pain/pain_our_results.html",
 			}
 		}
 	})
@@ -151,38 +151,38 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 		}
 	})
 	
-	.state('menu.tabs.peace_truths', {
-		url: "/peace-truths",
+	.state('menu.tabs.peace_my_cycle', {
+		url: "/peace-my-cycle",
 		views: {
 			'tab-peace': {
-				templateUrl: "templates/peace/peace_truths.html",
+				templateUrl: "templates/peace/peace_my_cycle.html",
 			}
 		}
 	})
 	
-	.state('menu.tabs.peace_truths_results', {
-		url: "/peace-truths-results",
+	.state('menu.tabs.peace_my_results', {
+		url: "/peace-my-results",
 		views: {
 			'tab-peace': {
-				templateUrl: "templates/peace/peace_truths_results.html",
+				templateUrl: "templates/peace/peace_my_results.html",
 			}
 		}
 	})
 	
-	.state('menu.tabs.peace_spouse_truths', {
-		url: "/peace-spouse-truths",
+	.state('menu.tabs.peace_spouse_cycle', {
+		url: "/peace-spouse-cycle",
 		views: {
 			'tab-peace': {
-				templateUrl: "templates/peace/peace_spouse_truths.html",
+				templateUrl: "templates/peace/peace_spouse_cycle.html",
 			}
 		}
 	})
 	
-	.state('menu.tabs.peace_cycle', {
-		url: "/peace-cycle",
+	.state('menu.tabs.peace_our_results', {
+		url: "/peace-our-results",
 		views: {
 			'tab-peace': {
-				templateUrl: "templates/peace/peace_cycle.html",
+				templateUrl: "templates/peace/peace_our_results.html",
 			}
 		}
 	})
@@ -255,6 +255,15 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 		views: {
 			'tab-teamwork': {
 				templateUrl: "templates/teamwork/teamwork_excercise.html",
+			}
+		}
+	})
+    
+    .state('menu.tabs.teamwork_excercise_results', {
+		url: "/teamwork-excercise-results",
+		views: {
+			'tab-teamwork': {
+				templateUrl: "templates/teamwork/teamwork_excercise_results.html",
 			}
 		}
 	})

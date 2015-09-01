@@ -1,0 +1,52 @@
+<ion-view view-title="Our Peace Results">
+	<ion-nav-title>
+		<img src="img/logo.png" class="title-image" />
+	</ion-nav-title>
+	<ion-content>
+		<div id="pain-results" class="padding">
+            <h2><i class="fa fa-refresh"></i> Our Peace Cycle <span class="right-text"><a ui-sref="menu.tabs.peace_cycle">Edit Cycle</a></span></h2>
+            <div class="cycles">
+			<div class="cycles-results">
+				<div class="top-left">
+					<img src="img/top-left-arrow.svg" class="top-left-arrow" width="100%" />
+				</div>
+				<div class="top-middle">
+					<h5>Truths</h5>
+					<span ng-repeat="(truth, val) in user.data.usness.truths" ng-if="val">{{truth}}<br /></span>
+					<span ng-repeat="(truth, val) in user.data.usness.truths_other" ng-if="val">{{val}}<br /></span>
+				</div>
+				<div class="top-right">
+					<img src="img/top-right-arrow.svg" class="top-right-arrow" width="100%" />
+				</div>
+				<div class="middle-left">
+					<h5>Actions</h5>
+					<span ng-repeat="(truth, val) in user.spouse_data.usness.actions" ng-if="val">{{truth}}<br /></span>
+					<span ng-repeat="(truth, val) in user.spouse_data.usness.actions_other" ng-if="val">{{val}}<br /></span>
+				</div>
+				<div class="middle-middle"></div>
+				<div class="middle-right">
+					<h5>Actions</h5>
+					<span ng-repeat="(action, val) in user.data.usness.actions" ng-if="val">{{action}}<br /></span>
+					<span ng-repeat="(action, val) in user.data.usness.actions_other" ng-if="val">{{val}}<br /></span>
+				</div>
+				<div class="bottom-left">
+					<img src="img/bottom-left-arrow.svg" class="bottom-left-arrow" width="100%" />
+				</div>
+				<div class="bottom-middle">
+					<br>
+					<h5>Truths</h5>
+					<span ng-repeat="(truth, val) in user.spouse_data.usness.truths" ng-if="val">{{truth}}<br /></span>
+					<span ng-repeat="(truth, val) in user.spouse_data.usness.truths_other" ng-if="val">{{val}}<br /></span>
+				</div>
+				<div class="bottom-right">
+					<img src="img/bottom-right-arrow.svg" class="bottom-right-arrow" width="100%" />
+				</div>
+			</div>
+			<div class="circle-cycle">
+				<img src="img/circle.svg" class="bottom-right-arrow" width="100%" />
+			</div>
+		</div>
+            <a ui-sref="menu.tabs.4steps" class="button button-block button-positive">Continue to Day Three <i class="fa fa-chevron-circle-right"></i></a>
+		</div>
+	</ion-content>
+</ion-view>
