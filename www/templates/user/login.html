@@ -3,7 +3,8 @@
 		<div class="padding">
 <!--			<img src="img/logo_tag_rev.png" class="logo" />-->
             <div class="white-box">
-                <input ng-click="fblogin()" type="button" value="Login with Facebook" class="button button-block button-positive" />
+				<a ng-click="fblogin()" class="button button-block button-positive" ><i class="fa fa-facebook-square"></i> Login with Facebook</a>
+                
                 <div class="text-center">or</div>
                 <form name="loginForm" novalidate="" ng-submit="login(loginForm)">
                     <div class="list list-inset">

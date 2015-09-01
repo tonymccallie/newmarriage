@@ -111,6 +111,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 		views: {
 			'tab-pain': {
 				templateUrl: "templates/pain/pain_my_cycle.html",
+				controller: "UserController"
 			}
 		}
 	})
@@ -156,6 +157,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 		views: {
 			'tab-peace': {
 				templateUrl: "templates/peace/peace_my_cycle.html",
+				controller: "UserController"
 			}
 		}
 	})
@@ -210,6 +212,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 		views: {
 			'tab-4steps': {
 				templateUrl: "templates/4steps/4steps_choose.html",
+				controller: "UserController"
 			}
 		}
 	})

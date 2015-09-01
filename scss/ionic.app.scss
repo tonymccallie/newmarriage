@@ -64,6 +64,14 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 	//background: $light;
 }
 
+.tab-item {
+	opacity: 1;
+}
+
+.tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
+	opacity: 0.7;
+}
+
 .whitebg {
 	background: #ffffff;
 }
@@ -298,6 +306,11 @@ input[placeholder] {
 .threeleaf-teamwork {content: url(../img/5_days_icons_day4.png);}
 .threeleaf-growth {content: url(../img/5_days_icons_day5.png);}
 
+#login_page {
+	input[type="text"], input[type="password"], input[type="email"] {
+		color: $light;
+	}
+}
 
 .user_form {
 	.logo {
@@ -829,9 +842,9 @@ li.item  {
 }
 
 .bar-stable .button.button-clear {
-    line-height: 130px;
+   // line-height: 130px;
     color: #fff;
-    margin-top: 11px;
+    margin-top: 6px;
     margin-right: 5px;
 }
 

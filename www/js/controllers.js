@@ -138,11 +138,11 @@ angular.module('greyback.controllers', [])
 	//	});
 
 	// Create the login modal that we will use later
-	$ionicModal.fromTemplateUrl('templates/login.html', {
-		scope: $scope
-	}).then(function (modal) {
-		$scope.modal = modal;
-	});
+//	$ionicModal.fromTemplateUrl('templates/login.html', {
+//		scope: $scope
+//	}).then(function (modal) {
+//		$scope.modal = modal;
+//	});
 
 	// Triggered in the login modal to close it
 	$scope.closeLogin = function () {
@@ -216,4 +216,54 @@ angular.module('greyback.controllers', [])
 		console.log('State: '+$state.current.name);
 		
 	});
+	
+	$scope.painList = ListService.painList;
+
+	$scope.painCount = 0;
+
+	$scope.checkPains = function (item) {
+		if (item) {
+			$scope.painCount++;
+		} else {
+			$scope.painCount--;
+		}
+	}
+	
+	$scope.copeList = ListService.copeList;
+
+	$scope.copeCount = 0;
+
+	$scope.checkCopes = function (item) {
+		if (item) {
+			$scope.copeCount++;
+		} else {
+			$scope.copeCount--;
+		}
+	}
+	
+	$scope.truthList = ListService.truthList;
+
+	$scope.truthCount = 0;
+
+	$scope.checkTruths = function (item) {
+		if (item) {
+			$scope.truthCount++;
+		} else {
+			$scope.truthCount--;
+		}
+	}
+	
+	$scope.actionList = ListService.actionList;
+
+	$scope.actionCount = 0;
+
+	$scope.checkActions = function (item) {
+		if (item) {
+			$scope.actionCount++;
+		} else {
+			$scope.actionCount--;
+		}
+	}
+	
+	$scope.steps = ListService.steps;
 })
