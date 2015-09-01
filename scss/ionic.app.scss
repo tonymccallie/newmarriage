@@ -307,7 +307,7 @@ input[placeholder] {
 .threeleaf-growth {content: url(../img/5_days_icons_day5.png);}
 
 #login_page {
-	input[type="text"], input[type="password"], input[type="email"] {
+	input[type="text"], input[type="password"], input[type="email"], ::-webkit-input-placeholder {
 		color: $light;
 	}
 }

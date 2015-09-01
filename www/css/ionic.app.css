@@ -9903,7 +9903,7 @@ i {
 .threeleaf-growth {
   content: url(../img/5_days_icons_day5.png); }
 
-#login_page input[type="text"], #login_page input[type="password"], #login_page input[type="email"] {
+#login_page input[type="text"], #login_page input[type="password"], #login_page input[type="email"], #login_page ::-webkit-input-placeholder {
   color: #fff; }
 
 .user_form .logo {
