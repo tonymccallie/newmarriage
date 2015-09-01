@@ -9810,6 +9810,9 @@ hr {
 i {
   font-family: "HelveticaNeueLT-Roman"; }
 
+input[placeholder] {
+  color: #fff; }
+
 .checkbox input:before, .checkbox-icon:before {
   border-radius: 0px; }
 
@@ -10347,3 +10350,8 @@ video {
 
 #growth-home .white-block {
   margin-bottom: 0px; }
+
+#signup_page .text-center {
+  color: #fff; }
+  #signup_page .text-center a {
+    font-weight: 800; }

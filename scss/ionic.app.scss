@@ -197,7 +197,7 @@ i {
 }
 
 input[placeholder] {
-//    color: $dark;
+    color: #fff;
 }
 
 .checkbox input:before, .checkbox-icon:before {
@@ -900,7 +900,13 @@ video {
 }
 
 
-#signup_page
+#signup_page .text-center {
+    color: #fff;
+    
+    a {
+        font-weight: 800;
+    }
+}
 
 
 
