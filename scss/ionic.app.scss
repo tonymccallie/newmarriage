@@ -15,14 +15,14 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
-$positive: #65afb4;;
-//$dark: #808184;
+$positive: #62AEB5;
+$dark: #333333;
 $calm: #808184;
 $lightGrey: #d0d2d3;
+$stable: #62AEB5;
 
-//$font-default: "LatoBold";
-$font-default: "HelveticaNeue";
-$font-italic: "HelveticaNeueOblique";
+$font-default: "Helvetica Neue LT Std";
+$font-italic: "Helvetica Neue LT Std";
 
 
 // The path for our ionicons font files, relative to the built CSS in www/css
@@ -30,7 +30,6 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
-
 @import "scss/fonts.scss";
 @import "scss/greyback.scss";
 
@@ -56,7 +55,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 .pane, .view, .menu-left {
-	background-image: url(../img/hideaways_bkgd.jpg);
+	background-image: url(../img/splash_bkgd.jpg);
 	background-size: cover;
 	background-position: center top;
 }
@@ -70,8 +69,8 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 .white-block {
-	padding: 10px;
-	background: $light;
+	padding: 15px 15px;
+    background-image: url(../img/white-box.png);
 	margin-bottom: 20px;
 }
 
@@ -102,8 +101,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 body, h1, h2, h3, h4, h5, h6, input, button, select, textarea {
 	font-family: $font-default;
     font-weight: 400;
-    letter-spacing: 1px;
-    color: $calm;
+    color: $dark;
 }
 
 p {
@@ -112,16 +110,15 @@ p {
 
 h1 {
     color: $positive;
-    font-weight: bolder;
+    font-weight: normal;
     width: 100%;
-    font-size: 16px;
+    font-size: 24px;
     font-weight: bolder;
     text-align: left;
     padding: 6px 0px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 0px;
+    margin-bottom: 15px;
     line-height: 20px;
+    border-bottom: 1px dashed $positive;
     
     img {
         vertical-align: sub;
@@ -135,11 +132,11 @@ h2 {
     font-size: 14px;
     font-weight: 400;
     text-align: center;
-    padding: 6px 0px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    padding: 9px 0px 3px 0px;
     margin-bottom: 0px;
-    line-height: 20px;
+    line-height: 22px;
+    margin-top: -2px;
+    text-transform: uppercase;
     
     img {
         vertical-align: sub;
@@ -162,7 +159,6 @@ h4 {
     font-weight: 400;
     text-align: center;
     padding: 20px 0px;
-    letter-spacing: 1px;
     text-transform: uppercase;
     margin-bottom: 0px;
     margin-top: 0px;
@@ -193,7 +189,7 @@ i {
 }
 
 input[placeholder] {
-	//color: $dark;
+//    color: $dark;
 }
 
 .checkbox input:before, .checkbox-icon:before {
@@ -205,11 +201,14 @@ input[placeholder] {
 	a {
 		color: $positive;
 		text-decoration: none;
-		font-family: "HelveticaNeue";
+		font-family: "Helvetica Neue LT Std";
+        font-weight: bolder;
 	}
 	.button {
-		font-family: "HelveticaNeue";
+		font-family: "Helvetica Neue LT Std";
 		color: $light;
+        font-weight: bolder;
+        font-size: 14px;
 	}
 }
 
@@ -248,7 +247,7 @@ input[placeholder] {
 }
 
 .title-image {
-	margin-top: 7px;
+	margin-top: 17px;
 	height: 30px;
 }
 
@@ -289,13 +288,14 @@ input[placeholder] {
 
 .tab-title {
 	font-family: $font-default;
+    font-weight: bolder;
 }
 
-.threeleaf-usness {content: url(../img/icon_usness.png);}
-.threeleaf-cycles {content: url(../img/icon_cycles.png);}
-.threeleaf-4steps {content: url(../img/icon_4steps.png);}
-.threeleaf-quizzes {content: url(../img/icon_quizzes.png);}
-.threeleaf-decisions {content: url(../img/icon_decisions.png);}
+.threeleaf-pain {content: url(../img/5_days_icons_day1.png);}
+.threeleaf-peace {content: url(../img/5_days_icons_day2.png);}
+.threeleaf-4steps {content: url(../img/5_days_icons_day3.png);}
+.threeleaf-teamwork {content: url(../img/5_days_icons_day4.png);}
+.threeleaf-growth {content: url(../img/5_days_icons_day5.png);}
 
 
 .user_form {
@@ -313,7 +313,7 @@ input[placeholder] {
 	
 	.item {
 		border-radius: 0px;
-		background: none;
+		background: #9EC2C4;
 		color: $light;
 		border: none;
 	}
@@ -323,13 +323,13 @@ input[placeholder] {
 	}
 	
 	.button {
-		border-radius: 30px;
+		border-radius: 0px;
 		border-width: 0px;
 	}
 }
 
 .button {
-    border-radius: 50px;
+    border-radius: 0px;
     text-transform: uppercase;
     border-width: 0;
     padding: 5px 10px;
@@ -425,7 +425,6 @@ input[type="radio"] {
     display:inline;
     text-transform: uppercase;
     font-size: 12px;
-    letter-spacing: 0px;
     margin-left: -4%;
     }
     
@@ -451,7 +450,6 @@ input[type="radio"] {
     li {
     text-transform: uppercase;
     font-size: 16px;
-    letter-spacing: 0px;
     }
     
     .checkbox {
@@ -734,18 +732,19 @@ li.item  {
 }
 
 .signup {
+    margin-top: 20px;
     padding: 15px 0px;
     font-size: 16px;
     text-transform: uppercase;
     a {
+        margin-left: 10px;
         text-decoration: none;
-        
-        font-size: 20px;
         font-weight: bolder;
     }
 }
 
 .disclaimer {
+    margin-top: 20px;
     color: #ffffff;
     
     a {
@@ -764,7 +763,6 @@ li.item  {
 
 .steps-list li {
     font-size: 12px; 
-    letter-spacing: 0px;
 }
 
 .foursteps-results {
@@ -798,6 +796,37 @@ li.item  {
 .quiz-results-category-second {
     padding-top: 20px;   
 }
+
+.bar {
+    height: 65px;
+}
+
+.bar-stable .button.button-clear {
+    line-height: 130px;
+    color: #fff;
+    margin-top: 11px;
+    margin-right: 5px;
+}
+
+.bar .title {
+    overflow: visible;
+    font-size: 20px;
+}
+
+.white-box {
+    background-image: url(../img/white-box.png);
+    padding: 20px;
+}
+
+.has-header {
+    top: 65px;
+}
+
+video {
+    margin-bottom: -7px;
+}
+
+
 
 
 

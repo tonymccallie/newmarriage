@@ -1,35 +1,37 @@
 <ion-view view-title="Login">
 	<ion-content class="user_form" id="login_page" has-bouncing="false">
 		<div class="padding">
-			<img src="img/logo_tag_rev.png" class="logo" />
-			<form name="loginForm" novalidate="" ng-submit="login(loginForm)">
-				<div class="list list-inset">
-					<div class="item item-input">
-						<input name="email" ng-model="loginUser.email" type="email" placeholder="EMAIL" required />
-					</div>
-					<div class="form-errors" ng-show="loginForm.email.$error && loginForm.$submitted" ng-messages="loginForm.email.$error" ng-messages-include="templates/errors.html"></div>
-				</div>
-				<div class="list list-inset">
-					<div class="item item-input">
-						<input name="password" ng-model="loginUser.password" type="password" placeholder="PASSWORD" required />
-					</div>
-					<div class="form-errors" ng-show="loginForm.password.$error && loginForm.$submitted" ng-messages="loginForm.password.$error" ng-messages-include="templates/errors.html"></div>
-				</div>
-				<div class="text-right">
-					<a ui-sref="forgot">Forgot Password</a>
-				</div>
-				<input type="submit" value="Sign In" class="button button-block button-positive" />
-				<input ng-click="fblogin()" type="button" value="Use Facebook Login" class="button button-block button-dark" />
-				<input ng-click="fblogout()" type="button" value="Logout" class="button button-block button-dark" />
-			</form>
-		</div>
+<!--			<img src="img/logo_tag_rev.png" class="logo" />-->
+            <div class="white-box">
+                <input ng-click="fblogin()" type="button" value="Login with Facebook" class="button button-block button-positive" />
+                <div class="text-center">or</div>
+                <form name="loginForm" novalidate="" ng-submit="login(loginForm)">
+                    <div class="list list-inset">
+                        <div class="item item-input">
+                            <input name="email" ng-model="loginUser.email" type="email" placeholder="EMAIL" required />
+                        </div>
+                        <div class="form-errors" ng-show="loginForm.email.$error && loginForm.$submitted" ng-messages="loginForm.email.$error" ng-messages-include="templates/errors.html"></div>
+                    </div>
+                    <div class="list list-inset">
+                        <div class="item item-input">
+                            <input name="password" ng-model="loginUser.password" type="password" placeholder="PASSWORD" required />
+                        </div>
+                        <div class="form-errors" ng-show="loginForm.password.$error && loginForm.$submitted" ng-messages="loginForm.password.$error" ng-messages-include="templates/errors.html"></div>
+                    </div>
+                    <input type="submit" value="Login" class="button button-block button-positive" />
+                    <div class="text-right">
+                        <a ui-sref="forgot">Forgot Password</a>
+                    </div>
+                    </form>
+            </div>
+<!--                <input ng-click="fblogout()" type="button" value="Logout" class="button button-block button-dark" />-->
+			
 		<div class="light text-center signup">
-			Don't have an account?<br />
-			<a href="#" ui-sref="signup">Sign Up</a>
-		</div>
-        <div class="disclaimer padding">
+			Don't have an account?<a href="#" ui-sref="signup">Sign Up</a>
+        </div>
+        <div class="disclaimer">
             <p>
-                If you click “Log in with Facebook” and are not a MarriageStrong user, you will be registered and you agree to the MarriageStrong <a ui-sref="terms">Terms & Conditions</a> and <a ui-sref="privacy">Privacy Policy.</a>
+                If you click “Log in with Facebook” and are not a 5 Days to a New Marriage user, you will be registered and you agree to the 5 Days to a New Marriage <a ui-sref="terms">Terms & Conditions</a> and <a ui-sref="privacy">Privacy Policy.</a>
             </p>
         </div>
 	</ion-content>
