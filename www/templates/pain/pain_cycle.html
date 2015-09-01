@@ -9,34 +9,22 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia metus in enim posuere, non venenatis purus pharetra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
                 <h2>What I Feel</h2>
                 <ul class="clearfix cycles-pain list">
-                    <li ngx-repeat="pain in painList" class="item item-checkbox">
+                    <li ng-repeat="pain in painList" class="item item-checkbox">
                         <label class="checkbox">
                             <input type="checkbox" name="pain" ng-model="user.data.usness.pains[pain]" ng-change="checkPains(user.data.usness.pains[pain])" ng-disabled="painCount>=3 && !user.data.usness.pains[pain]">
-                        </label>rejected
-                    </li>
-                    <li ngx-repeat="pain in painList" class="item item-checkbox">
-                        <label class="checkbox">
-                            <input type="checkbox" name="pain" ng-model="user.data.usness.pains[pain]" ng-change="checkPains(user.data.usness.pains[pain])" ng-disabled="painCount>=3 && !user.data.usness.pains[pain]">
-                        </label>rejected
-                    </li>
-                    <li ngx-repeat="pain in painList" class="item item-checkbox">
-                        <label class="checkbox">
-                            <input type="checkbox" name="pain" ng-model="user.data.usness.pains[pain]" ng-change="checkPains(user.data.usness.pains[pain])" ng-disabled="painCount>=3 && !user.data.usness.pains[pain]">
-                        </label>rejected
-                    </li>
-                    <li ngx-repeat="pain in painList" class="item item-checkbox">
-                        <label class="checkbox">
-                            <input type="checkbox" name="pain" ng-model="user.data.usness.pains[pain]" ng-change="checkPains(user.data.usness.pains[pain])" ng-disabled="painCount>=3 && !user.data.usness.pains[pain]">
-                        </label>rejected
-                    </li>
-                    <li ngx-repeat="pain in painList" class="item item-checkbox">
-                        <label class="checkbox">
-                            <input type="checkbox" name="pain" ng-model="user.data.usness.pains[pain]" ng-change="checkPains(user.data.usness.pains[pain])" ng-disabled="painCount>=3 && !user.data.usness.pains[pain]">
-                        </label>rejected
+                        </label>{{pain}}
                     </li>
                 </ul>
                 <h2>What I Normally Do</h2>
+                <ul class="clearfix cyclesCopes list">
+                    <li ng-repeat="cope in copeList" class="item item-checkbox">
+                        <label class="checkbox">
+                            <input type="checkbox" name="pain" value="TEACHING" ng-model="user.data.usness.copes[cope]" ng-change="checkCopes(user.data.usness.copes[cope])" ng-disabled="copeCount>=3 && !user.data.usness.copes[cope]">
+                        </label>{{cope}}
+                    </li>
+                </ul>
             </div>
+            <a ui-sref="menu.tabs.pain_feels_results" class="button button-block">View Your Pain Cycle</a>
         </div>
     </ion-content>
 </ion-view>

@@ -247,8 +247,9 @@ input[placeholder] {
 }
 
 .title-image {
-	margin-top: 17px;
-	height: 30px;
+	margin-top: 23px;
+    margin-left: -5px;
+	height: 20px;
 }
 
 .threeleaf {
@@ -417,16 +418,22 @@ input[type="radio"] {
     border-bottom: 1px $lightGrey solid;
 }
 
-.cycles-pain, .cycles-peace {
 
+.cycles-pain, .cyclesCopes, .cycles-peace {
+
+    margin-top: 10px;
+    
     li {
-    width: 54%;
+    width: 50%;
     float:left;
     display:inline;
-    text-transform: uppercase;
     font-size: 12px;
-    margin-left: -4%;
     }
+    
+    .item {
+    background-color: transparent;
+    }
+
     
     .checkbox {
         padding: 6px 0px;
@@ -445,28 +452,7 @@ input[type="radio"] {
    
 }
 
-.cyclesCopes {
-    
-    li {
-    text-transform: uppercase;
-    font-size: 16px;
-    }
-    
-    .checkbox {
-        padding: 6px 0px;
-    }
-    
 
-    
-    .item-checkbox  {
-        padding-left: 44px;
-    }
-    
-    #measure {
-        width: 100%;
-    }
-    
-}
 
 .tip-text {
     display: block;

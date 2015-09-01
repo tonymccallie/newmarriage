@@ -7952,8 +7952,9 @@ i {
   height: 100%; }
 
 .title-image {
-  margin-top: 17px;
-  height: 30px; }
+  margin-top: 23px;
+  margin-left: -5px;
+  height: 20px; }
 
 .threeleaf {
   font-family: 'Threeleaf';
@@ -8087,29 +8088,21 @@ input[type="radio"] {
   padding: 10px 15px;
   border-bottom: 1px #d0d2d3 solid; }
 
-.cycles-pain li, .cycles-peace li {
-  width: 54%;
-  float: left;
-  display: inline;
-  text-transform: uppercase;
-  font-size: 12px;
-  margin-left: -4%; }
-.cycles-pain .checkbox, .cycles-peace .checkbox {
-  padding: 6px 0px; }
-.cycles-pain .item-checkbox, .cycles-peace .item-checkbox {
-  padding-left: 44px; }
-.cycles-pain #measure, .cycles-peace #measure {
-  width: 100%; }
-
-.cyclesCopes li {
-  text-transform: uppercase;
-  font-size: 16px; }
-.cyclesCopes .checkbox {
-  padding: 6px 0px; }
-.cyclesCopes .item-checkbox {
-  padding-left: 44px; }
-.cyclesCopes #measure {
-  width: 100%; }
+.cycles-pain, .cyclesCopes, .cycles-peace {
+  margin-top: 10px; }
+  .cycles-pain li, .cyclesCopes li, .cycles-peace li {
+    width: 50%;
+    float: left;
+    display: inline;
+    font-size: 12px; }
+  .cycles-pain .item, .cyclesCopes .item, .cycles-peace .item {
+    background-color: transparent; }
+  .cycles-pain .checkbox, .cyclesCopes .checkbox, .cycles-peace .checkbox {
+    padding: 6px 0px; }
+  .cycles-pain .item-checkbox, .cyclesCopes .item-checkbox, .cycles-peace .item-checkbox {
+    padding-left: 44px; }
+  .cycles-pain #measure, .cyclesCopes #measure, .cycles-peace #measure {
+    width: 100%; }
 
 .tip-text {
   display: block;
