@@ -1,45 +1,48 @@
 <ion-view view-title="Signup">
-	<ion-content class="user_form" id="signup_page" has-bouncing="false">
-		<div class="padding">
-			<img src="img/logo_tag_rev.png" class="logo" />
-			<form name="signupForm" novalidate="" ng-submit="signup(signupForm)">
-<!-- form item -->
-				<div class="list list-inset">
-					<div class="item item-input" ng-class="{ 'has-errors' : signupForm.first_name.$invalid && signupForm.$submitted, 'no-errors' : signupForm.first_name.$valid  && signupForm.$submitted}">
-						<input name="first_name" ng-model="signupUser.first_name" type="text" placeholder="FIRST NAME" required />
-					</div>
-					<div class="form-errors" ng-show="signupForm.first_name.$error && signupForm.$submitted" ng-messages="signupForm.first_name.$error" ng-messages-include="templates/errors.html"></div>
-				</div>
-<!-- form item -->
-				<div class="list list-inset">
-					<div class="item item-input">
-						<input name="last_name" ng-model="signupUser.last_name" type="text" placeholder="LAST NAME" required />
-					</div>
-					<div class="form-errors" ng-show="signupForm.last_name.$error && signupForm.$submitted" ng-messages="signupForm.last_name.$error" ng-messages-include="templates/errors.html"></div>
-				</div>
-				<div class="list list-inset">
-					<div class="item item-input">
-						<input name="email" ng-model="signupUser.email" type="email" placeholder="EMAIL" required />
-					</div>
-					<div class="form-errors" ng-show="signupForm.email.$error && signupForm.$submitted" ng-messages="signupForm.email.$error" ng-messages-include="templates/errors.html"></div>
-				</div>
-				<div class="list list-inset">
-					<div class="item item-input">
-						<input name="password" ng-model="signupUser.password" type="password" placeholder="PASSWORD" required />
-					</div>
-					<div class="form-errors" ng-show="signupForm.password.$error && signupForm.$submitted" ng-messages="signupForm.password.$error" ng-messages-include="templates/errors.html"></div>
-				</div>
-				<div class="list list-inset">
-					<div class="item item-input">
-						<input name="password_verify" ng-model="signupUser.password_verify" compare-to="signupUser.password" type="password" placeholder="REPEAT PASSWORD" required />
-					</div>
-					<div class="form-errors" ng-show="signupForm.password_verify.$error && signupForm.$submitted" ng-messages="signupForm.password_verify.$error" ng-messages-include="templates/errors.html"></div>
-				</div>
-				<input type="submit" value="Create User" class="button button-block button-positive" />
-			</form>
-			<div class="text-center">
-				<a ui-sref="login">Return to login</a>
-			</div>
-		</div>
-	</ion-content>
+    <ion-content class="user_form" id="signup_page" has-bouncing="false">
+        <div class="padding">
+            <div class="white-block">
+                <h1>Create a New Account</h1>
+                <form name="signupForm" novalidate="" ng-submit="signup(signupForm)">
+                    <!-- form item -->
+                    <div class="list list-inset">
+                        <div class="item item-input" ng-class="{ 'has-errors' : signupForm.first_name.$invalid && signupForm.$submitted, 'no-errors' : signupForm.first_name.$valid  && signupForm.$submitted}">
+                            <input name="first_name" ng-model="signupUser.first_name" type="text" placeholder="FIRST NAME" required />
+                        </div>
+                        <div class="form-errors" ng-show="signupForm.first_name.$error && signupForm.$submitted" ng-messages="signupForm.first_name.$error" ng-messages-include="templates/errors.html"></div>
+                    </div>
+                    <!-- form item -->
+                    <div class="list list-inset">
+                        <div class="item item-input">
+                            <input name="last_name" ng-model="signupUser.last_name" type="text" placeholder="LAST NAME" required />
+                        </div>
+                        <div class="form-errors" ng-show="signupForm.last_name.$error && signupForm.$submitted" ng-messages="signupForm.last_name.$error" ng-messages-include="templates/errors.html"></div>
+                    </div>
+                    <div class="list list-inset">
+                        <div class="item item-input">
+                            <input name="email" ng-model="signupUser.email" type="email" placeholder="EMAIL" required />
+                        </div>
+                        <div class="form-errors" ng-show="signupForm.email.$error && signupForm.$submitted" ng-messages="signupForm.email.$error" ng-messages-include="templates/errors.html"></div>
+                    </div>
+                    <div class="list list-inset">
+                        <div class="item item-input">
+                            <input name="password" ng-model="signupUser.password" type="password" placeholder="PASSWORD" required />
+                        </div>
+                        <div class="form-errors" ng-show="signupForm.password.$error && signupForm.$submitted" ng-messages="signupForm.password.$error" ng-messages-include="templates/errors.html"></div>
+                    </div>
+                    <div class="list list-inset">
+                        <div class="item item-input">
+                            <input name="password_verify" ng-model="signupUser.password_verify" compare-to="signupUser.password" type="password" placeholder="REPEAT PASSWORD" required />
+                        </div>
+                        <div class="form-errors" ng-show="signupForm.password_verify.$error && signupForm.$submitted" ng-messages="signupForm.password_verify.$error" ng-messages-include="templates/errors.html"></div>
+                    </div>
+                    <input type="submit" value="Create Account" class="button button-block button-positive" />
+                </form>
+            </div>
+            <div class="text-center">
+                <a ui-sref="forgot">Forgot your Password?</a><br>
+                Already have an account? <a ui-sref="login">Login</a>
+            </div>
+        </div>
+    </ion-content>
 </ion-view>
