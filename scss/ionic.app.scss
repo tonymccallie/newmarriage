@@ -20,102 +20,99 @@ $dark: #333333;
 $calm: #808184;
 $lightGrey: #d0d2d3;
 $stable: #62AEB5;
-
 $font-default: "HelveticaNeueLT-Roman";
 $font-italic: "HelveticaNeueLT-Roman";
-
-
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
-
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 @import "scss/fonts.scss";
 @import "scss/greyback.scss";
-
 @mixin transform($transforms) {
-	-moz-transform: $transforms;
-	-o-transform: $transforms;
-	-ms-transform: $transforms;
-	-webkit-transform: $transforms;
-	transform: $transforms;
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
 }
-
 @mixin rotate ($deg) {
- 	@include transform(rotate(#{$deg}deg));
+    @include transform(rotate(#{$deg}deg));
 }
-
-
 .light {
-	background: $light;
-	color: $dark;
-	a {
-		color: $positive;
-	}
+    background: $light;
+    color: $dark;
+    a {
+        color: $positive;
+    }
 }
-
-.pane, .view, .menu-left {
-	background-image: url(../img/splash_bkgd.jpg);
-	background-size: cover;
-	background-position: center top;
-}
-
-.tab-content .pane {
-	//background: $light;
-}
-
-.tab-item {
-	opacity: 1;
-}
-
-.tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
-	opacity: 0.7;
-}
-
-.whitebg {
-	background: #ffffff;
-}
-
-.white-block {
-	padding: 15px 15px;
-    background-image: url(../img/white-box.png);
-	margin-bottom: 20px;
-}
-
+.pane,
+.view,
 .menu-left {
-	font-family: $font-default;
-	.title {
-		text-align: left;
-		font-family: $font-default;
-		.threeleaf {
-			@include rotate(180);
-		}
-	}
-	.threeleaf {
-		font-weight: bold;
-	}
-	.item {
-		background: none;
-		border: none;
-		a {
-			color: $light;
-		}
-	}
-	.item-complex .item-content, .item-radio .item-content {
-		background: none;
-	}
+    background-image: url(../img/splash_bkgd.jpg);
+    background-size: cover;
+    background-position: center top;
 }
-
-body, h1, h2, h3, h4, h5, h6, input, button, select, textarea {
-	font-family: $font-default;
+.tab-content .pane {
+    //background: $light;
+}
+.tab-item {
+    opacity: 1;
+}
+.tab-item.tab-item-active,
+.tab-item.active,
+.tab-item.activated {
+    opacity: 0.7;
+}
+.whitebg {
+    background: #ffffff;
+}
+.white-block {
+    padding: 15px 15px;
+    background-image: url(../img/white-box.png);
+    margin-bottom: 20px;
+}
+.menu-left {
+    font-family: $font-default;
+    .title {
+        text-align: left;
+        font-family: $font-default;
+        .threeleaf {
+            @include rotate(180);
+        }
+    }
+    .threeleaf {
+        font-weight: bold;
+    }
+    .item {
+        background: none;
+        border: none;
+        a {
+            color: $light;
+        }
+    }
+    .item-complex .item-content,
+    .item-radio .item-content {
+        background: none;
+    }
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+button,
+select,
+textarea {
+    font-family: $font-default;
     font-weight: 100;
     color: $dark;
 }
-
 p {
     text-align: justify;
 }
-
 h1 {
     color: $positive;
     font-weight: normal;
@@ -127,12 +124,10 @@ h1 {
     margin-bottom: 15px;
     line-height: 20px;
     border-bottom: 1px dashed $positive;
-    
     img {
         vertical-align: sub;
     }
 }
-
 h2 {
     width: 100%;
     background: $positive;
@@ -145,20 +140,16 @@ h2 {
     line-height: 22px;
     margin-top: -2px;
     text-transform: uppercase;
-    
     img {
         vertical-align: sub;
     }
 }
-
 h3 {
-    
     padding-left: 14px;
     color: $positive;
     font-size: 16px;
     text-transform: uppercase;
 }
-
 h4 {
     width: 100%;
     background: $lightGrey;
@@ -171,234 +162,212 @@ h4 {
     margin-bottom: 0px;
     margin-top: 0px;
 }
-
 h5 {
     font-size: 12px;
     font-weight: bolder;
     line-height: 18px;
 }
-
 h6 {
     font-size: 14px;
     font-weight: bolder;
     line-height: 18px;
     color: $positive;
 }
-
-
 hr {
     border: 0;
     height: 1px;
     background: $lightGrey;
 }
-
 i {
-	font-family: $font-italic;
+    font-family: $font-italic;
 }
-
 input[placeholder] {
-//    color: $dark;
+    color: #fff;
 }
-
-.checkbox input:before, .checkbox-icon:before {
-	border-radius: 0px;
+.checkbox input:before,
+.checkbox-icon:before {
+    border-radius: 0px;
 }
-
 .padding {
-	padding: 15px;
-	a {
-		color: $positive;
-		text-decoration: none;
-		font-family: "HelveticaNeueLT-Roman";
+    padding: 15px;
+    a {
+        color: $positive;
+        text-decoration: none;
+        font-family: "HelveticaNeueLT-Roman";
         font-weight: bolder;
-	}
-	.button {
-		font-family: "HelveticaNeueLT-Roman";
-		color: $light;
+    }
+    .button {
+        font-family: "HelveticaNeueLT-Roman";
+        color: $light;
         font-weight: bolder;
         font-size: 14px;
-	}
+    }
 }
-
 .scaleVid {
-	position:relative;
-	height:0;
+    position: relative;
+    height: 0;
 }
-
 .ratio16x9 {
-	padding-bottom:56.25%;
+    padding-bottom: 56.25%;
 }
-
 .ratio4x3 {
-	padding-bottom:75%;
+    padding-bottom: 75%;
 }
-
 .audioPlayerRatio {
-	padding-bottom:15%;
+    padding-bottom: 15%;
 }
-
 .scaleVid {
-	background: url(../img/loading.gif) center center no-repeat #9d9d9d;
-	background-size: 20%;
+    background: url(../img/loading.gif) center center no-repeat #9d9d9d;
+    background-size: 20%;
 }
-
 .scaleVid div,
 .scaleVid object,
 .scaleVid embed,
 .scaleVid iframe,
 .scaleVid video {
-	position:absolute !important;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
-
 .title-image {
-	margin-top: 8px;
+    margin-top: 8px;
     margin-left: -5px;
-	height: 20px;
+    height: 20px;
 }
-
 .threeleaf {
-	font-family: 'Threeleaf';
-	font-size: 1.5em;
-	vertical-align: -.15em;
-	font-weight: normal;
+    font-family: 'Threeleaf';
+    font-size: 1.5em;
+    vertical-align: -.15em;
+    font-weight: normal;
 }
-
 .threeleaf-separator {
-	color: $light;
-	font-size: 18px;
-	text-align: center;
-	.threeleaf {
-		vertical-align: -.13em;
-	}
-	background: $positive;
-	line-height: 30px;
-	padding: 10px;
-	margin-top: -5px;
+    color: $light;
+    font-size: 18px;
+    text-align: center;
+    .threeleaf {
+        vertical-align: -.13em;
+    }
+    background: $positive;
+    line-height: 30px;
+    padding: 10px;
+    margin-top: -5px;
 }
-
 .tabs {
-	height: 58px;
-	padding-top: 5px;
+    height: 58px;
+    padding-top: 5px;
 }
-
-.tabs-icon-top > .tabs .tab-item, .tabs-icon-top.tabs .tab-item, .tabs-icon-bottom > .tabs .tab-item, .tabs-icon-bottom.tabs .tab-item {
-	line-height: 16px;
+.tabs-icon-top > .tabs .tab-item,
+.tabs-icon-top.tabs .tab-item,
+.tabs-icon-bottom > .tabs .tab-item,
+.tabs-icon-bottom.tabs .tab-item {
+    line-height: 16px;
 }
-
 .tab-item .threeleaf {
-	font-size: 40px;
-	line-height: 38px;
-	font-family: $font-default;
+    font-size: 40px;
+    line-height: 38px;
+    font-family: $font-default;
 }
-
 .tab-title {
-	font-family: $font-default;
+    font-family: $font-default;
     font-weight: bolder;
 }
-
-.threeleaf-pain {content: url(../img/5_days_icons_day1.png);}
-.threeleaf-peace {content: url(../img/5_days_icons_day2.png);}
-.threeleaf-4steps {content: url(../img/5_days_icons_day3.png);}
-.threeleaf-teamwork {content: url(../img/5_days_icons_day4.png);}
-.threeleaf-growth {content: url(../img/5_days_icons_day5.png);}
-
-#login_page {
-	input[type="text"], input[type="password"], input[type="email"], ::-webkit-input-placeholder {
-		color: $light;
-	}
+.threeleaf-pain {
+    content: url(../img/5_days_icons_day1.png);
 }
-
+.threeleaf-peace {
+    content: url(../img/5_days_icons_day2.png);
+}
+.threeleaf-4steps {
+    content: url(../img/5_days_icons_day3.png);
+}
+.threeleaf-teamwork {
+    content: url(../img/5_days_icons_day4.png);
+}
+.threeleaf-growth {
+    content: url(../img/5_days_icons_day5.png);
+}
+#login_page,
+#signup_page {
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    ::-webkit-input-placeholder {
+        color: $light;
+    }
+}
 .user_form {
-	.logo {
-		width: 100%;
-	}
-	
-	.padding {
-		padding: 60px 40px 40px;
-	}
-	
-	.list, .list-inset {
-		border-radius: 0px;
-	}
-	
-	.item {
-		border-radius: 0px;
-		background: #9EC2C4;
-		color: $light;
-		border: none;
-	}
-	
-	.item-checkbox {
-		padding: 5px 5px 5px 60px;
-	}
-	
-	.button {
-		border-radius: 0px;
-		border-width: 0px;
-	}
+    .logo {
+        width: 100%;
+    }
+    .padding {
+        padding: 60px 40px 40px;
+    }
+    .list,
+    .list-inset {
+        border-radius: 0px;
+    }
+    .item {
+        border-radius: 0px;
+        background: #9EC2C4;
+        color: $light;
+        border: none;
+    }
+    .item-checkbox {
+        padding: 5px 5px 5px 60px;
+    }
+    .button {
+        border-radius: 0px;
+        border-width: 0px;
+    }
 }
-
 .button {
     border-radius: 0px;
     text-transform: uppercase;
     border-width: 0;
     padding: 5px 10px;
 }
-
 .icon-calm {
     color: $calm;
 }
-
 .datepicker {
-	font-size: 22px;
-	color: $calm;
-	border: solid 1px $lightGrey;
-	padding: 15px 10px 13px 10px;
+    font-size: 22px;
+    color: $calm;
+    border: solid 1px $lightGrey;
+    padding: 15px 10px 13px 10px;
 }
-
 .item-checkbox {
     border-width: 0px;
     font-size: 13px;
 }
-
 .grey_bg {
     background: $lightGrey;
     color: $calm;
 }
-
 input[type="radio"] {
     margin-left: 14px;
     margin-right: 10px;
     margin-bottom: 10px;
     font-size: 10px;
 }
-
 .personalityResults p {
     padding-left: 14px;
     margin-bottom: 18px;
 }
-
 .usnessGiftsForm {
-    
     .item {
-    font-size: 12px;
+        font-size: 12px;
     }
-    
     strong {
         color: $positive;
         font-size: 16px;
     }
 }
-
 .circle-number-container {
     float: left;
     width: 70px;
 }
-
 .circle-number {
     font-size: 36px;
     width: 60px;
@@ -410,88 +379,63 @@ input[type="radio"] {
     line-height: 62px;
     margin-right: 10px;
 }
-
-.circle-number-text-to-the-right {
-       
-}
-
+.circle-number-text-to-the-right {}
 .gifts-list li {
     font-size: 24px;
 }
-
 .step-list li {
     font-size: 28px;
     text-align: center;
 }
-
 .paragraph-list {
     font-size: 13px;
     line-height: 17px;
     padding: 10px 15px;
     border-bottom: 1px $lightGrey solid;
 }
-
-
-.cycles-pain, .cyclesCopes, .cycles-peace {
-
+.cycles-pain,
+.cyclesCopes,
+.cycles-peace {
     margin-top: 10px;
-    
     li {
-    width: 50%;
-    float:left;
-    display:inline;
-    font-size: 12px;
+        width: 50%;
+        float: left;
+        display: inline;
+        font-size: 12px;
     }
-    
     .item {
-    background-color: transparent;
+        background-color: transparent;
     }
-
-    
     .checkbox {
         padding: 6px 0px;
     }
-    
-
-    
-    .item-checkbox  {
+    .item-checkbox {
         padding-left: 44px;
     }
-    
     #measure {
         width: 100%;
     }
-    
-   
 }
-
-
 #pain-results {
-    
     h2 {
-    text-align: left;
-    padding-left: 10px;
+        text-align: left;
+        padding-left: 10px;
     }
     .right-text {
         font-size: 11px;
         text-align: right;
         float: right;
         padding-right: 10px;
-        
         a {
             color: #fff;
         }
     }
 }
-
-
-
 .tip-text {
     display: block;
     clear: both;
     padding-top: 15px;
 }
-
 .cycle_circle {
     border: 1px $lightGrey solid;
     width: 300px;
@@ -501,75 +445,60 @@ input[type="radio"] {
     z-index: 1;
     position: relative;
 }
-
-.small-button-text{
+.small-button-text {
     font-size: 10px;
     line-height: 10px;
     font-family: $font-italic;
     line-height: 9px;
 }
-
 .two-line-button {
     line-height: 16px;
 }
-
-li.item  {
-    white-space:normal;
-
+li.item {
+    white-space: normal;
 }
-
 .item-stacked-label {
     font-size: 12px;
     color: $calm;
 }
-
 .decisions .grey_bg {
     font-size: 20px;
     padding-top: 7px;
     border-top: 1px solid $calm;
-    }
-
+}
 .green-check.checkbox input:before {
     border-radius: 0px;
     background-color: #7db584;
     border-radius: 30px;
 }
-    
 .yellow-check.checkbox input:before {
     border-radius: 0px;
     background-color: #f7b568;
     border-radius: 30px;
 }
-
 .red-check.checkbox input:before {
     border-radius: 0px;
     background-color: #ed7479;
     border-radius: 30px;
 }
-
 .quiz-left-text {
     text-align: right;
     font-size: 10px;
     float: right;
 }
-
 .quizzesUnessForm {
-
     input[type="radio"] {
         font-size: 24px;
     }
-    
     label {
         line-height: 30px;
     }
-    
     h3 {
-    text-align: center;
-    font-size: 22px;
-    line-height: 20px;
+        text-align: center;
+        font-size: 22px;
+        line-height: 20px;
     }
 }
-
 .red-circle {
     font-size: 36px;
     width: 60px;
@@ -584,7 +513,6 @@ li.item  {
     background: #ed7479;
     vertical-align: middle;
 }
-
 .green-circle {
     font-size: 36px;
     width: 60px;
@@ -598,7 +526,6 @@ li.item  {
     text-indent: -3000px;
     background: #7db584;
 }
-
 .orange-circle {
     font-size: 36px;
     width: 60px;
@@ -612,7 +539,6 @@ li.item  {
     text-indent: -3000px;
     background: #f7b568;
 }
-
 .yellow-circle {
     font-size: 36px;
     width: 60px;
@@ -626,67 +552,52 @@ li.item  {
     text-indent: -3000px;
     background: #fae76b;
 }
-
 .circle-selceted {
     border: 5px $calm solid;
 }
-
 .quizzes-results-list li {
     font-size: 12px;
 }
-
 .quizzes-circle-container {
     float: left;
     width: 25%;
 }
-
 .quizzes-circle-text {
     float: left;
-   width: 75%;
+    width: 75%;
 }
-
-
 //Cylces Circles
-
 .cycles {
     display: block;
     position: relative;
     padding-top: 120;
     width: 100%;
-    
-    .padding {
-
-    }
+    .padding {}
 }
-
 .cycles-results {
     display: block;
     position: absolute;
     margin: 23% 10% 5%;
     line-height: 15px;
     z-index: 100;
-    
+    font-size: 10px;
     h5 {
         text-transform: uppercase;
         line-height: 10px;
         margin-bottom: 0px;
         padding-bottom: 5px;
+        font-size: 15px;
     }
-    
     img {
         padding: 28%;
     }
-
 }
-
 .circle-cycle {
     display: block;
     position: relative;
     top: 30px;
-	margin-bottom: 30px;
+    margin-bottom: 30px;
 }
-
-
 .top-left {
     width: 25%;
     float: left;
@@ -698,24 +609,22 @@ li.item  {
     float: left;
     text-align: center;
     vertical-align: middle;
-    min-height: 80px;
+    min-height: 70px;
 }
 .top-right {
     width: 25%;
     float: left;
     text-align: center;
-    
     img {
         text-align: left;
     }
 }
-
 .middle-left {
     width: 50%;
     float: left;
     text-align: center;
     vertical-align: middle;
-    min-height: 80px;
+    min-height: 70px;
 }
 .middle-middle {
     width: 0%;
@@ -728,9 +637,8 @@ li.item  {
     float: left;
     text-align: center;
     vertical-align: middle;
-    min-height: 80px;
+    min-height: 70px;
 }
-
 .bottom-left {
     width: 25%;
     float: left;
@@ -742,7 +650,7 @@ li.item  {
     float: left;
     text-align: center;
     vertical-align: middle;
-    min-height: 80px;
+    min-height: 70px;
 }
 .bottom-right {
     width: 25%;
@@ -750,7 +658,6 @@ li.item  {
     text-align: center;
     vertical-align: middle;
 }
-
 .signup {
     margin-top: 20px;
     padding: 15px 0px;
@@ -762,17 +669,14 @@ li.item  {
         font-weight: bolder;
     }
 }
-
 .disclaimer {
     margin-top: 20px;
     color: #ffffff;
-    
     a {
         color: #ffffff;
         font-weight: bolder;
     }
 }
-
 .profile-name {
     font-size: 22px;
     border: 1px $lightGrey solid;
@@ -780,106 +684,90 @@ li.item  {
     padding: 15px 10px 13px 10px;
     display: block;
 }
-
 .steps-list li {
-    font-size: 12px; 
+    font-size: 12px;
 }
-
 .foursteps-results {
-    padding: 10px 15px 25px; 
+    padding: 10px 15px 25px;
     border-bottom: 1px $lightGrey solid;
 }
-
 .foursteps-results-heading {
     text-transform: uppercase;
     font-size: 14px;
     color: $positive;
     padding-bottom: 5px;
 }
-
 .foursteps-results-answer {
     text-transform: uppercase;
     font-size: 20px;
 }
-
 .foursteps-info {
-    padding: 25px 15px 25px; 
+    padding: 25px 15px 25px;
     border-bottom: 1px $lightGrey dashed;
 }
-
 .foursteps-info-last {
-    padding: 25px 15px 5px; 
+    padding: 25px 15px 5px;
 }
-
 .foursteps-info-heading {
     text-transform: uppercase;
     font-size: 18px;
     padding-bottom: 5px;
 }
-
 .foursteps-info-answer {
     text-transform: uppercase;
     font-size: 14px;
 }
-
 .quiz-results {
-    padding: 10px 30px 25px;  
+    padding: 10px 30px 25px;
     border-bottom: 1px $lightGrey solid;
 }
-
 .quiz-results-category {
     text-transform: uppercase;
     font-size: 16px;
     color: $positive;
 }
-
 .quiz-results-category-second {
-    padding-top: 20px;   
+    padding-top: 20px;
 }
-
 .bar {
     height: 65px;
 }
-
 .bar-stable .button.button-clear {
-   // line-height: 130px;
+    // line-height: 130px;
     color: #fff;
     margin-top: 6px;
     margin-right: 5px;
 }
-
 .bar .title {
     overflow: visible;
     padding-top: 14px;
     font-size: 20px;
     text-transform: uppercase;
 }
-
 .white-box {
     background-image: url(../img/white-box.png);
     padding: 20px;
 }
-
 .has-header {
     top: 65px;
 }
-
 video {
     margin-bottom: -7px;
 }
-
-#conflict-excercise {
-   textarea {
-       width: 100%;
-       height: 300px;
+#conflict-choose {
+    textarea {
+        width: 100%;
+        height: 300px;
+    }
+    li.ng-binding {
+        padding: 10px;
+        font-size: 18px;
     }
 }
-
 .button-bar {
     border: 0px;
 }
-
-.button-bar > .button  {
+.button-bar > .button {
     border-top: 0px;
     border-bottom: 0px;
     border-color: #529599;
@@ -888,21 +776,15 @@ video {
     min-height: 30px;
     line-height: 30px;
 }
-
-.button.active, .button.activated {
-   background-color: #529599; 
+.button.active,
+.button.activated {
+    background-color: #529599;
 }
-
-
-
 #growth-home .white-block {
     margin-bottom: 0px;
 }
-
-
-
-
-
-    
-
-
+#signup_page .text-center {
+    a {
+        font-weight: 800;
+    }
+}

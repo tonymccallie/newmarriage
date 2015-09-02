@@ -1,25 +1,30 @@
 <ion-view view-title="4 Steps Info">
-	<ion-nav-title>
-		<img src="img/logo.png" class="title-image" />
-	</ion-nav-title>
-	<ion-content>
-		<div class="padding">
-			<div class="white-block">
-				<h1>My Four Steps</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia metus in enim posuere, non venenatis purus pharetra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-				<div ng-repeat="step in steps">
-					<h2>{{step.name}}</h2>
-					<ul class="clearfix cycles-pain list">
-						<li ng-repeat="answer in step.values" class="item item-checkbox">
-							<label class="checkbox">
-								<input type="checkbox">
-							</label>{{answer}}</li>
-					</ul>
-				</div>
-			</div>
-			<a ui-sref="menu.tabs.4steps_excercise" class="button button-block button-positive">Continue
+    <ion-nav-title>
+        <img src="img/logo.png" class="title-image" />
+    </ion-nav-title>
+    <ion-content>
+        <div id="conflict-choose" class="padding">
+            <div class="white-block">
+                <h1>My Four Steps</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia metus in enim posuere, non venenatis purus pharetra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                <div ng-repeat="step in steps">
+                    <h2>{{step.name}}</h2>
+                    <ul class="clearfix list">
+                        <li ng-repeat="answer in step.values" class="4stepslist">
+                            {{answer}}
+                        </li>
+                    </ul>
+                </div>
+                <h1>Conflict Execrise</h1>
+                <p>Think of a recent situation that caused conflict in your relationship.</p>
+                <form method="post" action="contactengine.php">
+                    <textarea></textarea>
+                </form>
+            </div>
+
+            <a ui-sref="menu.tabs.teamwork" class="button button-block button-positive">Continue to Day Four
 				<i class="fa fa-chevron-circle-right"></i>
 			</a>
-		</div>
-	</ion-content>
+        </div>
+    </ion-content>
 </ion-view>

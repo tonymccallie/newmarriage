@@ -9810,6 +9810,9 @@ hr {
 i {
   font-family: "HelveticaNeueLT-Roman"; }
 
+input[placeholder] {
+  color: #fff; }
+
 .checkbox input:before, .checkbox-icon:before {
   border-radius: 0px; }
 
@@ -9903,7 +9906,7 @@ i {
 .threeleaf-growth {
   content: url(../img/5_days_icons_day5.png); }
 
-#login_page input[type="text"], #login_page input[type="password"], #login_page input[type="email"], #login_page ::-webkit-input-placeholder {
+#login_page input[type="text"], #login_page input[type="password"], #login_page input[type="email"], #login_page ::-webkit-input-placeholder, #signup_page input[type="text"], #signup_page input[type="password"], #signup_page input[type="email"], #signup_page ::-webkit-input-placeholder {
   color: #fff; }
 
 .user_form .logo {
@@ -10159,12 +10162,14 @@ li.item {
   position: absolute;
   margin: 23% 10% 5%;
   line-height: 15px;
-  z-index: 100; }
+  z-index: 100;
+  font-size: 10px; }
   .cycles-results h5 {
     text-transform: uppercase;
     line-height: 10px;
     margin-bottom: 0px;
-    padding-bottom: 5px; }
+    padding-bottom: 5px;
+    font-size: 15px; }
   .cycles-results img {
     padding: 28%; }
 
@@ -10185,7 +10190,7 @@ li.item {
   float: left;
   text-align: center;
   vertical-align: middle;
-  min-height: 80px; }
+  min-height: 70px; }
 
 .top-right {
   width: 25%;
@@ -10199,7 +10204,7 @@ li.item {
   float: left;
   text-align: center;
   vertical-align: middle;
-  min-height: 80px; }
+  min-height: 70px; }
 
 .middle-middle {
   width: 0%;
@@ -10212,7 +10217,7 @@ li.item {
   float: left;
   text-align: center;
   vertical-align: middle;
-  min-height: 80px; }
+  min-height: 70px; }
 
 .bottom-left {
   width: 25%;
@@ -10225,7 +10230,7 @@ li.item {
   float: left;
   text-align: center;
   vertical-align: middle;
-  min-height: 80px; }
+  min-height: 70px; }
 
 .bottom-right {
   width: 25%;
@@ -10326,9 +10331,12 @@ li.item {
 video {
   margin-bottom: -7px; }
 
-#conflict-excercise textarea {
+#conflict-choose textarea {
   width: 100%;
   height: 300px; }
+#conflict-choose li.ng-binding {
+  padding: 10px;
+  font-size: 18px; }
 
 .button-bar {
   border: 0px; }
@@ -10347,3 +10355,6 @@ video {
 
 #growth-home .white-block {
   margin-bottom: 0px; }
+
+#signup_page .text-center a {
+  font-weight: 800; }
