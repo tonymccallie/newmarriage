@@ -130,6 +130,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 		views: {
 			'tab-pain': {
 				templateUrl: "templates/pain/pain_spouse_cycle.html",
+				controller: "UserController"
 			}
 		}
 	})

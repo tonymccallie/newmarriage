@@ -11,7 +11,7 @@
                 <ul class="clearfix cycles-pain list">
                     <li ng-repeat="pain in painList" class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" name="pain" ng-model="user.data.usness.pains[pain]" ng-change="checkPains(user.data.usness.pains[pain])" ng-disabled="painCount>=3 && !user.data.usness.pains[pain]">
+                            <input type="checkbox" name="pain" ng-model="user.data.usness.pains[pain]" ng-change="checkPains(user.data.usness.pains[pain])" ng-disabled="painCount>=4 && !user.data.usness.pains[pain]">
                         </label>{{pain}}
                     </li>
                 </ul>
@@ -19,7 +19,7 @@
                 <ul class="clearfix cyclesCopes list">
                     <li ng-repeat="cope in copeList" class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" name="pain" value="TEACHING" ng-model="user.data.usness.copes[cope]" ng-change="checkCopes(user.data.usness.copes[cope])" ng-disabled="copeCount>=3 && !user.data.usness.copes[cope]">
+                            <input type="checkbox" name="pain" value="TEACHING" ng-model="user.data.usness.copes[cope]" ng-change="checkCopes(user.data.usness.copes[cope])" ng-disabled="copeCount>=4 && !user.data.usness.copes[cope]">
                         </label>{{cope}}
                     </li>
                 </ul>
