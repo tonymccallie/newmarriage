@@ -50,6 +50,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .menu-left {
     background-image: url(../img/splash_bkgd.jpg);
     background-size: cover;
+	-webkit-background-size: cover;
     background-position: center top;
 }
 .tab-content .pane {
