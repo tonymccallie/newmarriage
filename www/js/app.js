@@ -177,6 +177,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 		views: {
 			'tab-peace': {
 				templateUrl: "templates/peace/peace_spouse_cycle.html",
+				controller: "UserController"
 			}
 		}
 	})
