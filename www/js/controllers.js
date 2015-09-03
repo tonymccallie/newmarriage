@@ -3,6 +3,7 @@ angular.module('greyback.controllers', [])
 .controller('AppController', function ($scope, $sce, $ionicDeploy, $ionicActionSheet, $location, $ionicPlatform, $state, $ionicSideMenuDelegate, UserService, user) {
 	console.log('AppController');
 	//app wide variables
+	$scope.currentDate = new Date();
 	$scope.DOMAIN = DOMAIN;
 	$scope.imageDir = DOMAIN + '/img/thumb/';
 	$scope.logs = [];

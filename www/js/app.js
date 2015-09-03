@@ -335,6 +335,33 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
+
+	.state('menu.tabs.groups', {
+		url: "/groups",
+		views: {
+			'tab-static': {
+				templateUrl: "templates/static/groups.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.intensives', {
+		url: "/intensives",
+		views: {
+			'tab-static': {
+				templateUrl: "templates/static/intensives.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.therapists', {
+		url: "/therapists",
+		views: {
+			'tab-static': {
+				templateUrl: "templates/static/therapists.html",
+			}
+		}
+	})
 	
 	.state('menu.tabs.resources', {
 		url: "/resources",
@@ -359,6 +386,15 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 		views: {
 			'tab-static': {
 				templateUrl: "templates/static/app_info.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.settings', {
+		url: "/settings",
+		views: {
+			'tab-static': {
+				templateUrl: "templates/static/settings.html",
 			}
 		}
 	})
