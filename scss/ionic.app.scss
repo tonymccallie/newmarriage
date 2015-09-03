@@ -48,11 +48,9 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .pane,
 .view,
 .menu-left {
-//    background-image: url(../img/splash_bkgd.jpg);
-//    background-size: cover;
-//	-webkit-background-size: cover;
-//    background-position: center top;
-	background: #b9b9b9;
+    background-image: url(../img/splash_bkgd_small.png);
+    background-size: cover;
+    background-position: center top;
 }
 .tab-content .pane {
     //background: $light;

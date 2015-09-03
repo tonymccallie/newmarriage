@@ -9697,7 +9697,9 @@ a.button {
     color: #62AEB5; }
 
 .pane, .view, .menu-left {
-  background: #b9b9b9; }
+  background-image: url(../img/splash_bkgd_small.png);
+  background-size: cover;
+  background-position: center top; }
 
 .tab-item {
   opacity: 1; }
