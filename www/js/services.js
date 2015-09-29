@@ -19,7 +19,7 @@ angular.module('greyback.services', [])
 			if (typeof storedUser.User === 'undefined') {
 				console.log('UserService.init: need to login');
 				//HIDE FOR DEV
-				//$state.go('login');
+				$state.go('login');
 				deferred.resolve(self.user);
 			} else {
 				console.log('UserService.init: use local');
@@ -36,10 +36,11 @@ angular.module('greyback.services', [])
 
 	self.loginUser = function (user) {
 		console.log('UserService.loginUser');
-		var promise = $http.post(DOMAIN + '/users/ajax_login', user)
+		var promise = $http.post(DOMAIN + '/ajax/users/login', user)
 			.success(function (response, status, headers, config) {
 			switch (response.status) {
 			case 'SUCCESS':
+				response.data.data = $localStorage.toObj(response.data.User.json);
 				self.updateUser(response.data).then(function () {
 					$state.go('menu.tabs.home');
 				});
@@ -62,7 +63,7 @@ angular.module('greyback.services', [])
 
 	self.saveFacebook = function (fbuser) {
 		console.log('UserService.saveFacebook')
-		var promise = $http.post(DOMAIN + '/users/ajax_facebook', fbuser)
+		var promise = $http.post(DOMAIN + '/ajax/users/facebook', fbuser)
 			.success(function (response, status, headers, config) {
 
 			if (response.status === 'SUCCESS') {
@@ -97,7 +98,7 @@ angular.module('greyback.services', [])
 
 	self.createUser = function (user) {
 		console.log('UserService.createUser');
-		var promise = $http.post(DOMAIN + '/users/ajax_register', user)
+		var promise = $http.post(DOMAIN + '/ajax/users/register', user)
 			.success(function (response, status, headers, config) {
 			switch (response.status) {
 			case 'SUCCESS':
@@ -120,7 +121,7 @@ angular.module('greyback.services', [])
 		});
 		return promise;
 	}
-
+	
 	self.updateUser = function (user) {
 		console.log('UserService.updateUser');
 		var deferred = $q.defer();
@@ -130,10 +131,35 @@ angular.module('greyback.services', [])
 		return deferred.promise;
 	}
 
+	self.syncUser = function (user) {
+		console.log('UserService.syncUser');
+
+		var promise = $http.post(DOMAIN + '/ajax/users/update', user)
+			.success(function (response, status, headers, config) {
+			switch (response.status) {
+				case 'SUCCESS':
+					self.updateUser(response.data);
+					break;
+				case 'MESSAGE':
+					alert(response.data);
+					break;
+				default:
+					alert('there was a server error for Messages');
+					console.log(response);
+					break;
+			}
+		})
+			.error(function (response, status, headers, config) {
+			console.log(['error', status, headers, config]);
+		});
+
+		return promise;
+	}
+
 	self.logout = function () {
 		console.log('UserService.logout');
 		self.user = null;
-		$localStorage.remove('User');
+		$localStorage.remove('NewMarriageUser');
 		$state.go('login');
 	}
 })

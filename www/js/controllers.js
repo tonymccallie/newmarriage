@@ -139,11 +139,11 @@ angular.module('greyback.controllers', [])
 	//	});
 
 	// Create the login modal that we will use later
-//	$ionicModal.fromTemplateUrl('templates/login.html', {
-//		scope: $scope
-//	}).then(function (modal) {
-//		$scope.modal = modal;
-//	});
+	//	$ionicModal.fromTemplateUrl('templates/login.html', {
+	//		scope: $scope
+	//	}).then(function (modal) {
+	//		$scope.modal = modal;
+	//	});
 
 	// Triggered in the login modal to close it
 	$scope.closeLogin = function () {
@@ -189,35 +189,124 @@ angular.module('greyback.controllers', [])
 	});
 })
 
-.controller('UserController', function ($scope, $q, $ionicModal, $timeout, $ionicHistory, $jrCrop, $state, ImgCache, PtrService, ngFB, user, UserService, ListService) {
+.controller('UserController', function ($scope, $q, $ionicModal, $timeout, $ionicHistory, $ionicLoading, $state, ImgCache, PtrService, ngFB, user, UserService, ListService) {
 	console.log('UserController');
 	$scope.link_code = "";
 	$scope.user = user;
 	//$scope.user.data = {};
-	
-	var countBool = function(obj) {
+
+	var countBool = function (obj) {
 		var count = 0;
-		for(var key in obj) {
-			if(obj[key]) {
+		for (var key in obj) {
+			if (obj[key]) {
 				count++;
 			}
 		}
 		return count;
 	}
-	
-	var sumObj = function(obj) {
+
+	var sumObj = function (obj) {
 		var count = 0;
-		for(var key in obj) {
-			count+=parseInt(obj[key]);
+		for (var key in obj) {
+			count += parseInt(obj[key]);
 		}
 		return count;
 	}
-	
-	$scope.$on('$ionicView.enter', function(e) {
-		console.log('State: '+$state.current.name);
-		
+
+	$scope.$on('$ionicView.enter', function (e) {
+		console.log('State: ' + $state.current.name);
+		switch ($state.current.name) {
+		case 'menu.tabs.pain_my_cycle':
+			if ((typeof $scope.user.data != 'undefined') && (typeof $scope.user.data.usness != 'undefined') && (typeof $scope.user.data.usness.pains != 'undefined')) {
+				$scope.painCount = countBool($scope.user.data.usness.pains);
+			}
+			if ((typeof $scope.user.data != 'undefined') && (typeof $scope.user.data.usness != 'undefined') && (typeof $scope.user.data.usness.copes != 'undefined')) {
+				$scope.copeCount = countBool($scope.user.data.usness.copes);
+			}
+			break;
+		case 'menu.tabs.pain_spouse_cycle':
+			if ((typeof $scope.user.data != 'undefined') && (typeof $scope.user.data.usness != 'undefined') && (typeof $scope.user.data.usness.spouse_pains != 'undefined')) {
+				$scope.painCountSpouse = countBool($scope.user.data.usness.spouse_pains);
+			}
+			if ((typeof $scope.user.data != 'undefined') && (typeof $scope.user.data.usness != 'undefined') && (typeof $scope.user.data.usness.spouse_copes != 'undefined')) {
+				$scope.copeCountSpouse = countBool($scope.user.data.usness.spouse_copes);
+			}
+			break;
+		case 'menu.tabs.peace_my_cycle':
+			if ((typeof $scope.user.data != 'undefined') && (typeof $scope.user.data.usness != 'undefined') && (typeof $scope.user.data.usness.truths != 'undefined')) {
+				$scope.truthCount = countBool($scope.user.data.usness.truths);
+			}
+			if ((typeof $scope.user.data != 'undefined') && (typeof $scope.user.data.usness != 'undefined') && (typeof $scope.user.data.usness.actions != 'undefined')) {
+				$scope.actionCount = countBool($scope.user.data.usness.actions);
+			}
+			break;
+		case 'menu.tabs.peace_spouse_cycle':
+			if ((typeof $scope.user.data != 'undefined') && (typeof $scope.user.data.usness != 'undefined') && (typeof $scope.user.data.usness.spouse_truths != 'undefined')) {
+				$scope.truthCountSpouse = countBool($scope.user.data.usness.spouse_truths);
+			}
+			if ((typeof $scope.user.data != 'undefined') && (typeof $scope.user.data.usness != 'undefined') && (typeof $scope.user.data.usness.spouse_actions != 'undefined')) {
+				$scope.actionCountSpouse = countBool($scope.user.data.usness.spouse_actions);
+			}
+			break;
+		}
 	});
-	
+
+	$scope.process = function (next, form) {
+		var boolPass = true;
+		if (form == 'usnessGiftsForm' && $scope.giftCount < 1) {
+			boolPass = false;
+			alert('You much choose at least one gift.');
+		}
+
+		if (form == 'pain_my_cycle' && $scope.painCount < 1) {
+			boolPass = false;
+			alert('You much choose at least one feeling.');
+		}
+
+		if (form == 'pain_my_cycle' && $scope.copeCount < 1) {
+			boolPass = false;
+			alert('You much choose at least one cope.');
+		}
+		
+		if (form == 'pain_spouse_cycle' && $scope.painCountSpouse < 1) {
+			boolPass = false;
+			alert('You much choose at least one feeling.');
+		}
+
+		if (form == 'pain_spouse_cycle' && $scope.copeCountSpouse < 1) {
+			boolPass = false;
+			alert('You much choose at least one cope.');
+		}
+
+		if (form == 'peace_my_cycle' && $scope.truthCount < 1) {
+			boolPass = false;
+			alert('You much choose at least one truth.');
+		}
+
+		if (form == 'peace_my_cycle' && $scope.actionCount < 1) {
+			boolPass = false;
+			alert('You much choose at least one action.');
+		}
+
+		if (boolPass) {
+			$scope.user.data[form] = true;
+			if (form == 'cyclesPeaceResponseForm') {
+				$scope.user.data.peace = true;
+			}
+			if (form == 'cyclesPainCopesForm') {
+				$scope.user.data.pain = true;
+			}
+			$ionicLoading.show({
+				template: 'Syncing Results<br /><ion-spinner></ion-spinner>'
+			});
+			UserService.syncUser($scope.user).then(function (data) {
+				$ionicLoading.hide();
+				console.log($scope.user);
+			});
+			$state.go(next);
+		}
+	}
+
 	$scope.painList = ListService.painList;
 
 	$scope.painCount = 0;
@@ -230,6 +319,16 @@ angular.module('greyback.controllers', [])
 		}
 	}
 	
+	$scope.painCountSpouse = 0;
+	
+	$scope.checkPainsSpouse = function (item) {
+		if (item) {
+			$scope.painCountSpouse++;
+		} else {
+			$scope.painCountSpouse--;
+		}
+	}
+
 	$scope.copeList = ListService.copeList;
 
 	$scope.copeCount = 0;
@@ -242,6 +341,16 @@ angular.module('greyback.controllers', [])
 		}
 	}
 	
+	$scope.copeCountSpouse = 0;
+	
+	$scope.checkCopesSpouse = function (item) {
+		if (item) {
+			$scope.copeCountSpouse++;
+		} else {
+			$scope.copeCountSpouse--;
+		}
+	}
+
 	$scope.truthList = ListService.truthList;
 
 	$scope.truthCount = 0;
@@ -254,6 +363,16 @@ angular.module('greyback.controllers', [])
 		}
 	}
 	
+	$scope.truthCountSpouse = 0;
+
+	$scope.checkTruthsSpouse = function (item) {
+		if (item) {
+			$scope.truthCountSpouse++;
+		} else {
+			$scope.truthCountSpouse--;
+		}
+	}
+
 	$scope.actionList = ListService.actionList;
 
 	$scope.actionCount = 0;
@@ -266,5 +385,15 @@ angular.module('greyback.controllers', [])
 		}
 	}
 	
+	$scope.actionCountSpouse = 0;
+
+	$scope.checkActionsSpouse = function (item) {
+		if (item) {
+			$scope.actionCountSpouse++;
+		} else {
+			$scope.actionCountSpouse--;
+		}
+	}
+
 	$scope.steps = ListService.steps;
 })

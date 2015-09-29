@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8' ?>
-<widget id="net.greyback.newmarriage" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="net.greyback.newmarriage" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
 	<name>New Marriage</name>
 	<description>5 Days to a New Marriage</description>
 	<author email="info@greyback.net" href="http://greyback.net/">GreyBack Labs, LLP</author>
@@ -46,6 +46,10 @@
 	<feature name="StatusBar">
 		<param name="ios-package" value="CDVStatusBar" onload="true" />
 	</feature>
+	<platform name="android">
+		<preference name="AndroidLaunchMode" value="singleTop"/>
+		<preference name="android-minSdkVersion" value="19" />
+	</platform>
 	<gap:splash src="splash.png" />
 	<icon src="icon.png" />
 	<icon gap:platform="ios" src="resources/ios/icon/icon.png" width="57" height="57" />

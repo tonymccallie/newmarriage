@@ -2,7 +2,7 @@ var DOMAIN = 'http://newmarriage.server1.greyback.net/'
 //DEVELOPMENT
 var devtest = /localhost/.test(window.location.hostname);
 if (devtest) {
-	DOMAIN = 'http://localhost/marriagestrong_server';
+	DOMAIN = 'http://localhost/newmarriage_server';
 	isMobile = false;
 }
 devtest = /threeleaf/.test(window.location.hostname);
@@ -15,17 +15,17 @@ if (devtest) {
 //var DOMAIN = 'http://office.threeleaf.net:8080/marriagestrong_server';
 
 var onclickFix = function (html) {
-	html = html.replace(/href=\"\//ig, 'href="http://www.newmarriage.org/');
-	html = html.replace(/src=\"\//ig, 'src="http://www.newmarriage.org/');
+	html = html.replace(/href=\"\//ig, 'href="http://www.intensives.com/');
+	html = html.replace(/src=\"\//ig, 'src="http://www.intensives.com/');
 	return html.replace(/href=\"(.+?)\"/gi, 'onclick="window.open(\'$1\',\'_system\',\'location=yes\');"');
 }
 
-angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.core', 'ionic.service.push', 'ionic.service.deploy', 'ionic.service.analytics', 'ionic-datepicker','ngOpenFB', 'ngMessages', 'jrCrop', 'greyback.controllers', 'greyback.services', 'greyback.utils'])
+angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.core', 'ionic.service.push', 'ionic.service.deploy', 'ionic.service.analytics', 'ionic-datepicker','ngOpenFB', 'ngMessages', 'greyback.controllers', 'greyback.services', 'greyback.utils'])
 
 .run(function ($rootScope, $ionicPlatform, $ionicAnalytics, $cordovaSplashscreen, ImgCache, ngFB) {
 	console.log('App.run');
 	ngFB.init({
-		appId: '850066335072761',
+		appId: '1640442856222427',
 		oauthRedirectURL: DOMAIN + '/users/oauthlogin',
 		logoutRedirectURL: DOMAIN + '/users/oauthlogout',
 	});

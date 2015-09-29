@@ -7,24 +7,24 @@
             <div class="white-block">
                 <h1><i class="fa fa-refresh"></i> Spouse's Pain Cycle</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia metus in enim posuere, non venenatis purus pharetra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-                <h2>What I Feel</h2>
+                <h2>What They Feel</h2>
                 <ul class="clearfix cycles-pain list">
                     <li ng-repeat="pain in painList" class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" name="pain" ng-model="user.data.usness.pains[pain]" ng-change="checkPains(user.data.usness.pains[pain])" ng-disabled="painCount>=3 && !user.data.usness.pains[pain]">
+                            <input type="checkbox" name="pain" ng-model="user.data.usness.spouse_pains[pain]" ng-change="checkPainsSpouse(user.data.usness.spouse_pains[pain])" ng-disabled="painCountSpouse>=4 && !user.data.usness.spouse_pains[pain]">
                         </label>{{pain}}
                     </li>
                 </ul>
-                <h2>What I Normally Do</h2>
+                <h2>What They Normally Do</h2>
                 <ul class="clearfix cyclesCopes list">
                     <li ng-repeat="cope in copeList" class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" name="pain" value="TEACHING" ng-model="user.data.usness.copes[cope]" ng-change="checkCopes(user.data.usness.copes[cope])" ng-disabled="copeCount>=3 && !user.data.usness.copes[cope]">
+                            <input type="checkbox" name="pain" ng-model="user.data.usness.spouse_copes[cope]" ng-change="checkCopesSpouse(user.data.usness.spouse_copes[cope])" ng-disabled="copeCountSpouse>=4 && !user.data.usness.spouse_copes[cope]">
                         </label>{{cope}}
                     </li>
                 </ul>
             </div>
-            <a ui-sref="menu.tabs.pain_our_results" class="button button-block"><i class="fa fa-refresh"></i> View Your Pain Cycle</a>
+            <a ng-click="process('menu.tabs.pain_our_results','pain_spouse_cycle')" class="button button-block"><i class="fa fa-refresh"></i>View Your Spouse's Pain Cycle</a>
         </div>
     </ion-content>
 </ion-view>
