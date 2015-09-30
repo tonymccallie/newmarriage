@@ -7,19 +7,20 @@
 			<div class="white-block">
 				<h1>My Four Steps</h1>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia metus in enim posuere, non venenatis purus pharetra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-				<h2>How I feel</h2>
+				<h2>How I feel right now</h2>
 				<ul class="clearfix list">
 					<li ng-repeat="(label, val) in user.data.usness.pains" ng-if="val" class="4stepslist">{{label}}</li>
 				</ul>
-				<h2>My Truths</h2>
-				<ul class="clearfix list">
-					<li ng-repeat="(label, val) in user.data.usness.truths" ng-if="val" class="4stepslist">{{label}}</li>
-				</ul>
-				<h2>How I Cope</h2>
+				<h2>What I do when I feel this way</h2>
 				<ul class="clearfix list">
 					<li ng-repeat="(label, val) in user.data.usness.copes" ng-if="val" class="4stepslist">{{label}}</li>
 				</ul>
-				<h2>My Actions</h2>
+				<h2>But, the truth about me is:</h2>
+				<ul class="clearfix list">
+					<li ng-repeat="(label, val) in user.data.usness.truths" ng-if="val" class="4stepslist">{{label}}</li>
+				</ul>
+				
+				<h2>So, my new action is:</h2>
 				<ul class="clearfix list">
 					<li ng-repeat="(label, val) in user.data.usness.actions" ng-if="val" class="4stepslist">{{label}}</li>
 				</ul>
