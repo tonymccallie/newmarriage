@@ -9714,6 +9714,8 @@ a.button {
   padding: 15px 15px;
   background-image: url(../img/white-box.png);
   margin-bottom: 20px; }
+  .white-block .item {
+    background: none; }
 
 .menu-left {
   font-family: "HelveticaNeueLT-Roman"; }
@@ -9943,7 +9945,7 @@ input[placeholder] {
 
 .item-checkbox {
   border-width: 0px;
-  font-size: 13px; }
+  font-size: 15px; }
 
 .grey_bg {
   background: #d0d2d3;

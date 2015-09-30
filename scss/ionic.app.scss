@@ -70,6 +70,9 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     padding: 15px 15px;
     background-image: url(../img/white-box.png);
     margin-bottom: 20px;
+	.item {
+		background: none;
+	}
 }
 .menu-left {
     font-family: $font-default;
@@ -339,7 +342,7 @@ input[placeholder] {
 }
 .item-checkbox {
     border-width: 0px;
-    font-size: 13px;
+    font-size: 15px;
 }
 .grey_bg {
     background: $lightGrey;

@@ -396,4 +396,9 @@ angular.module('greyback.controllers', [])
 	}
 
 	$scope.steps = ListService.steps;
+	
+	$scope.clearConflict = function() {
+		console.log($scope.user.data);
+		$scope.user.data.conflict_excercise = "";
+	}
 })

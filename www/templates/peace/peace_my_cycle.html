@@ -8,14 +8,14 @@
                 <h1><i class="fa fa-refresh"></i> My Peace Cycle</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia metus in enim posuere, non venenatis purus pharetra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
                 <h2>Truths</h2>
-                <ul class="clearfix cycles-peace list">
+                <ul class="clearfix list">
                     <li ng-repeat="truth in truthList" class="item item-checkbox">
                         <label class="checkbox">
                             <input type="checkbox" name="pain" ng-model="user.data.usness.truths[truth]" ng-change="checkTruths(user.data.usness.truths[truth])" ng-disabled="truthCount>=4 && !user.data.usness.truths[truth]">
                         </label>{{truth}}</li>
                 </ul>
                 <h2>Actions</h2>
-                <ul class="clearfix cyclesCopes list">
+                <ul class="clearfix list">
                     <li ng-repeat="action in actionList" class="item item-checkbox">
                         <label class="checkbox">
                             <input type="checkbox" name="pain" value="TEACHING" ng-model="user.data.usness.actions[action]" ng-change="checkActions(user.data.usness.actions[action])" ng-disabled="actionCount>=4 && !user.data.usness.actions[action]">
