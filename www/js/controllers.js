@@ -41,6 +41,11 @@ angular.module('greyback.controllers', [])
 	$scope.trust = function (snippet) {
 		return $sce.trustAsHtml(snippet);
 	};
+	
+	$scope.updateTextArea = function (textarea) {
+		var element = document.getElementById(textarea);
+		element.style.height = element.scrollHeight + "px";
+	}
 
 	$scope.logout = function () {
 		$scope.user = {};
@@ -267,7 +272,7 @@ angular.module('greyback.controllers', [])
 			boolPass = false;
 			alert('You much choose at least one cope.');
 		}
-		
+
 		if (form == 'pain_spouse_cycle' && $scope.painCountSpouse < 1) {
 			boolPass = false;
 			alert('You much choose at least one feeling.');
@@ -318,9 +323,9 @@ angular.module('greyback.controllers', [])
 			$scope.painCount--;
 		}
 	}
-	
+
 	$scope.painCountSpouse = 0;
-	
+
 	$scope.checkPainsSpouse = function (item) {
 		if (item) {
 			$scope.painCountSpouse++;
@@ -340,9 +345,9 @@ angular.module('greyback.controllers', [])
 			$scope.copeCount--;
 		}
 	}
-	
+
 	$scope.copeCountSpouse = 0;
-	
+
 	$scope.checkCopesSpouse = function (item) {
 		if (item) {
 			$scope.copeCountSpouse++;
@@ -362,7 +367,7 @@ angular.module('greyback.controllers', [])
 			$scope.truthCount--;
 		}
 	}
-	
+
 	$scope.truthCountSpouse = 0;
 
 	$scope.checkTruthsSpouse = function (item) {
@@ -384,7 +389,7 @@ angular.module('greyback.controllers', [])
 			$scope.actionCount--;
 		}
 	}
-	
+
 	$scope.actionCountSpouse = 0;
 
 	$scope.checkActionsSpouse = function (item) {
@@ -396,9 +401,55 @@ angular.module('greyback.controllers', [])
 	}
 
 	$scope.steps = ListService.steps;
-	
-	$scope.clearConflict = function() {
+
+	$scope.clearConflict = function () {
 		console.log($scope.user.data);
-		$scope.user.data.conflict_excercise = "";
+		$scope.user.data.conflict_exercise = "";
+	}
+})
+
+.controller('ExerciseController', function ($scope, $q, $ionicModal, $timeout, $ionicHistory, $state, ImgCache, PtrService, ngFB, user, exercise, UserService) {
+	console.log('ExerciseController');
+	$scope.exercise = exercise;
+	
+	console.log(typeof $scope.exercise.index);
+	
+	if(!typeof $scope.exercise.index == 'undefined') {
+		console.log('check index');
+		$scope.exercise.index = $scope.user.data.exercises.indexOf($scope.exercise)
+	}
+	
+	console.log($scope.exercise);
+
+	$scope.save = function (form) {
+		console.log('ExcerciseController.save');
+		if (typeof $scope.user.data == 'undefined') {
+			$scope.user.data = {};
+		}
+
+		if (typeof $scope.user.data.exercises == 'undefined') {
+			$scope.user.data.exercises = [];
+		}
+
+		if (typeof $scope.exercise.index == 'undefined') {
+			$scope.user.data.exercises.push($scope.exercise);
+			$scope.exercise.index = $scope.user.data.exercises.length-1;
+		}
+		
+		$scope.user.data.exercises[$scope.exercise.index] = $scope.exercise;
+
+		console.log($scope.user.data.exercises);
+
+		UserService.updateUser($scope.user);
+		$state.go('menu.tabs.teamwork_exercise_view',{exercise: $scope.exercise.index});
+		$scope.exercise = {};
+	}
+
+	$scope.remove = function () {
+		console.log('ExcerciseController.remove');
+		console.log($scope.exercise.index);
+		$scope.user.data.exercises.splice($scope.exercise.index, 1);
+		UserService.updateUser($scope.user);
+		$state.go('menu.tabs.teamwork_exercise_results');
 	}
 })

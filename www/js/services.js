@@ -162,6 +162,21 @@ angular.module('greyback.services', [])
 		$localStorage.remove('NewMarriageUser');
 		$state.go('login');
 	}
+	
+	self.exercise = function(exercise) {
+		console.log('UserService.exercise');
+		var deferred = $q.defer();
+		if(self.user) {
+			console.log(self.user.data.exercises[exercise]);
+			deferred.resolve(self.user.data.exercises[exercise]);
+		} else {
+			$state.go('menu.tabs.teamwork');
+			deferred.resolve({});
+		}
+		
+		
+		return deferred.promise;
+	}
 })
 
 .service('PtrService', function ($timeout, $ionicScrollDelegate) {

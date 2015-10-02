@@ -219,11 +219,11 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 		}
 	})
 	
-	.state('menu.tabs.4steps_excercise', {
-		url: "/4steps-excercise",
+	.state('menu.tabs.4steps_exercise', {
+		url: "/4steps-exercise",
 		views: {
 			'tab-4steps': {
-				templateUrl: "templates/4steps/4steps_excercise.html",
+				templateUrl: "templates/4steps/4steps_exercise.html",
 			}
 		}
 	})
@@ -255,20 +255,71 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 		}
 	})
 	
-	.state('menu.tabs.teamwork_excercise', {
-		url: "/teamwork-excercise",
+	.state('menu.tabs.teamwork_exercise', {
+		url: "/teamwork-exercise",
 		views: {
 			'tab-teamwork': {
-				templateUrl: "templates/teamwork/teamwork_excercise.html",
+				templateUrl: "templates/teamwork/teamwork_exercise.html",
 			}
 		}
 	})
-    
-    .state('menu.tabs.teamwork_excercise_results', {
-		url: "/teamwork-excercise-results",
+	
+	.state('menu.tabs.teamwork_exercise_create', {
+		url: "/teamwork-exercise-create",
 		views: {
 			'tab-teamwork': {
-				templateUrl: "templates/teamwork/teamwork_excercise_results.html",
+				templateUrl: "templates/teamwork/teamwork_exercise.html",
+				controller: "ExerciseController"
+			}
+		},
+		resolve: {
+			exercise: function (UserService, $stateParams) {
+				console.log('menu.tabs.teamwork_exercise_create.resolve');
+				return {};
+			}
+		}
+
+	})
+	
+	.state('menu.tabs.teamwork_exercise_view', {
+		url: "/teamwork-exercise-view/:exercise",
+		views: {
+			'tab-teamwork': {
+				templateUrl: "templates/teamwork/teamwork_exercise_view.html",
+				controller: "ExerciseController"
+			}
+		},
+		resolve: {
+			exercise: function (UserService, $stateParams) {
+				console.log('menu.tabs.teamwork_exercise_view.resolve');
+				return UserService.exercise($stateParams.exercise);
+			}
+		}
+
+	})
+	
+	.state('menu.tabs.teamwork_exercise_edit', {
+		url: "/teamwork-exercise-edit/:exercise",
+		views: {
+			'tab-teamwork': {
+				templateUrl: "templates/teamwork/teamwork_exercise.html",
+				controller: "ExerciseController"
+			}
+		},
+		resolve: {
+			exercise: function (UserService, $stateParams) {
+				console.log('menu.tabs.teamwork_exercise_edit.resolve');
+				return UserService.exercise($stateParams.exercise);
+			}
+		}
+
+	})
+    
+    .state('menu.tabs.teamwork_exercise_results', {
+		url: "/teamwork-exercise-results",
+		views: {
+			'tab-teamwork': {
+				templateUrl: "templates/teamwork/teamwork_exercise_results.html",
 			}
 		}
 	})
