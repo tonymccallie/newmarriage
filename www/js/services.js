@@ -121,7 +121,7 @@ angular.module('greyback.services', [])
 		});
 		return promise;
 	}
-	
+
 	self.updateUser = function (user) {
 		console.log('UserService.updateUser');
 		var deferred = $q.defer();
@@ -137,16 +137,16 @@ angular.module('greyback.services', [])
 		var promise = $http.post(DOMAIN + '/ajax/users/update', user)
 			.success(function (response, status, headers, config) {
 			switch (response.status) {
-				case 'SUCCESS':
-					self.updateUser(response.data);
-					break;
-				case 'MESSAGE':
-					alert(response.data);
-					break;
-				default:
-					alert('there was a server error for Messages');
-					console.log(response);
-					break;
+			case 'SUCCESS':
+				self.updateUser(response.data);
+				break;
+			case 'MESSAGE':
+				alert(response.data);
+				break;
+			default:
+				alert('there was a server error for Messages');
+				console.log(response);
+				break;
 			}
 		})
 			.error(function (response, status, headers, config) {
@@ -162,19 +162,19 @@ angular.module('greyback.services', [])
 		$localStorage.remove('NewMarriageUser');
 		$state.go('login');
 	}
-	
-	self.exercise = function(exercise) {
+
+	self.exercise = function (exercise) {
 		console.log('UserService.exercise');
 		var deferred = $q.defer();
-		if(self.user) {
+		if (self.user) {
 			console.log(self.user.data.exercises[exercise]);
 			deferred.resolve(self.user.data.exercises[exercise]);
 		} else {
 			$state.go('menu.tabs.teamwork');
 			deferred.resolve({});
 		}
-		
-		
+
+
 		return deferred.promise;
 	}
 })
@@ -216,7 +216,8 @@ angular.module('greyback.services', [])
 
 	}
 })
-	.service('ListService', function () {
+
+.service('ListService', function () {
 	var self = this;
 
 	self.painList = [
@@ -251,42 +252,94 @@ angular.module('greyback.services', [])
 		'SOBER', 'INCLUSIVE', 'RELAXED', 'POSITIVE'
 	];
 
-	self.steps = [
-		{
-			name: "How I Feel",
-			values: [
-				"Unloved",
-				"Unable to Measure Up",
-				"Unappreciated",
-				"Hopeless"
+	self.selfcareQuiz = {
+		physical: {
+			1: [
+				"Eat Poorly (too much, too little, or junk food)",
+				"Eats well sometimes, but generally not nutritionally minded",
+				"Eats consistently healthfully"
+			],
+			2: [
+				"Sleep poorly,(too much, too little, irregular) ",
+				"Gets some rest ",
+				"Well rested"
+			],
+			3: [
+				"Out of shape, no exercise ",
+				"Gets occasional exercise ",
+				"In great physical shape, exercises regularly"
+			],
+			4: [
+				"Never drinks water",
+				"Occasionally drinks water ",
+				"Drinks 6-8 cups of water daily"
 			]
 		},
-		{
-			name: "My Truths",
-			values: [
-				"Can Control Self",
-				"Empowered",
-				"Encouraged",
-				"Celebrated"
+		mental: {
+			1: [
+				"Disinterested in learning new things ",
+				"Sometimes gets interested in learning new things ",
+				"Always seeking to learn new things "
+			],
+			2: [
+				"Generally bored with life ",
+				"Occasionally exchanges ideas with others ",
+				"Regularly exchanges ideas with others "
+			],
+			3: [
+				"Doesn’t seek to understand more deeply ",
+				"Willing to grow in wisdom and knowledge ",
+				"Challenges self to constantly grow in wisdom and knowledge "
+			],
+			4: [
+				"Overwhelmed by negative thoughts",
+				"Try to challenge my thoughts",
+				"Consistently replacing negative thoughts"
 			]
 		},
-		{
-			name: "How I Cope",
-			values: [
-				"Blame Others",
-				"Withdraw to Defend",
-				"Catastrophizing",
-				"Avoidant"
+		emotional: {
+			1: [
+				"Judges feelings as wrong or bad",
+				"Sometimes judges emotions as wrong or bad",
+				"Accepts emotions as information worth considering"
+			],
+			2: [
+				"Stuffs emotions (ignores or avoids)",
+				"Sometimes stuffs or ignores feelings",
+				"Accurately identify and express emotions"
+			],
+			3: [
+				"Wallowing (often overcome or paralyzed by emotions)",
+				"Sometimes overwhelmed by emotions",
+				"Values emotions in proper perspective"
+			],
+			4: [
+				"Avoid vulnerability in relationships",
+				"Occasionally opens up and shares with friends",
+				"Consistently transparent and connected with friends"
 			]
 		},
-		{
-			name: "My Actions",
-			values: [
-				"Communicate Care",
-				"Reliably Connected",
-				"Seeking Good",
-				"Non Defensive"
+		spiritual: {
+			1: [
+				"Never reads scripture",
+				"Reads scripture occasionally, but rarely studies the scripture",
+				"Consistent bible reading and study"
+			],
+			2: [
+				"Rarely or never prays",
+				"Prays occasionally or just at meals",
+				"Consistently prays by yourself and with others"
+			],
+			3: [
+				"No meaningful connection to God",
+				"Consults God on BIG decisions or when in crisis",
+				"Looks to the scripture for wisdom and spiritual guiding"
+			],
+			4: [
+				"No conscious fellowship with other believers",
+				"Attends church occasionally",
+				"Active involvement with Small Group and church"
 			]
 		}
-	]
+	};
 });

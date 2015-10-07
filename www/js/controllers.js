@@ -41,7 +41,7 @@ angular.module('greyback.controllers', [])
 	$scope.trust = function (snippet) {
 		return $sce.trustAsHtml(snippet);
 	};
-	
+
 	$scope.updateTextArea = function (textarea) {
 		var element = document.getElementById(textarea);
 		element.style.height = element.scrollHeight + "px";
@@ -194,63 +194,45 @@ angular.module('greyback.controllers', [])
 	});
 })
 
-.controller('UserController', function ($scope, $q, $ionicModal, $timeout, $ionicHistory, $ionicLoading, $state, ImgCache, PtrService, ngFB, user, UserService, ListService) {
+.controller('UserController', function ($scope, $q, $ionicModal, $timeout, $ionicHistory, $ionicLoading, $state, ImgCache, PtrService, ngFB, user, UserService, ListService, UtilService) {
 	console.log('UserController');
 	$scope.link_code = "";
 	$scope.user = user;
 	//$scope.user.data = {};
-
-	var countBool = function (obj) {
-		var count = 0;
-		for (var key in obj) {
-			if (obj[key]) {
-				count++;
-			}
-		}
-		return count;
-	}
-
-	var sumObj = function (obj) {
-		var count = 0;
-		for (var key in obj) {
-			count += parseInt(obj[key]);
-		}
-		return count;
-	}
 
 	$scope.$on('$ionicView.enter', function (e) {
 		console.log('State: ' + $state.current.name);
 		switch ($state.current.name) {
 		case 'menu.tabs.pain_my_cycle':
 			if ((typeof $scope.user.data != 'undefined') && (typeof $scope.user.data.usness != 'undefined') && (typeof $scope.user.data.usness.pains != 'undefined')) {
-				$scope.painCount = countBool($scope.user.data.usness.pains);
+				$scope.painCount = UtilService.countBool($scope.user.data.usness.pains);
 			}
 			if ((typeof $scope.user.data != 'undefined') && (typeof $scope.user.data.usness != 'undefined') && (typeof $scope.user.data.usness.copes != 'undefined')) {
-				$scope.copeCount = countBool($scope.user.data.usness.copes);
+				$scope.copeCount = UtilService.countBool($scope.user.data.usness.copes);
 			}
 			break;
 		case 'menu.tabs.pain_spouse_cycle':
 			if ((typeof $scope.user.data != 'undefined') && (typeof $scope.user.data.usness != 'undefined') && (typeof $scope.user.data.usness.spouse_pains != 'undefined')) {
-				$scope.painCountSpouse = countBool($scope.user.data.usness.spouse_pains);
+				$scope.painCountSpouse = UtilService.countBool($scope.user.data.usness.spouse_pains);
 			}
 			if ((typeof $scope.user.data != 'undefined') && (typeof $scope.user.data.usness != 'undefined') && (typeof $scope.user.data.usness.spouse_copes != 'undefined')) {
-				$scope.copeCountSpouse = countBool($scope.user.data.usness.spouse_copes);
+				$scope.copeCountSpouse = UtilService.countBool($scope.user.data.usness.spouse_copes);
 			}
 			break;
 		case 'menu.tabs.peace_my_cycle':
 			if ((typeof $scope.user.data != 'undefined') && (typeof $scope.user.data.usness != 'undefined') && (typeof $scope.user.data.usness.truths != 'undefined')) {
-				$scope.truthCount = countBool($scope.user.data.usness.truths);
+				$scope.truthCount = UtilService.countBool($scope.user.data.usness.truths);
 			}
 			if ((typeof $scope.user.data != 'undefined') && (typeof $scope.user.data.usness != 'undefined') && (typeof $scope.user.data.usness.actions != 'undefined')) {
-				$scope.actionCount = countBool($scope.user.data.usness.actions);
+				$scope.actionCount = UtilService.countBool($scope.user.data.usness.actions);
 			}
 			break;
 		case 'menu.tabs.peace_spouse_cycle':
 			if ((typeof $scope.user.data != 'undefined') && (typeof $scope.user.data.usness != 'undefined') && (typeof $scope.user.data.usness.spouse_truths != 'undefined')) {
-				$scope.truthCountSpouse = countBool($scope.user.data.usness.spouse_truths);
+				$scope.truthCountSpouse = UtilService.countBool($scope.user.data.usness.spouse_truths);
 			}
 			if ((typeof $scope.user.data != 'undefined') && (typeof $scope.user.data.usness != 'undefined') && (typeof $scope.user.data.usness.spouse_actions != 'undefined')) {
-				$scope.actionCountSpouse = countBool($scope.user.data.usness.spouse_actions);
+				$scope.actionCountSpouse = UtilService.countBool($scope.user.data.usness.spouse_actions);
 			}
 			break;
 		}
@@ -411,14 +393,14 @@ angular.module('greyback.controllers', [])
 .controller('ExerciseController', function ($scope, $q, $ionicModal, $timeout, $ionicHistory, $state, ImgCache, PtrService, ngFB, user, exercise, UserService) {
 	console.log('ExerciseController');
 	$scope.exercise = exercise;
-	
+
 	console.log(typeof $scope.exercise.index);
-	
-	if(!typeof $scope.exercise.index == 'undefined') {
+
+	if (!typeof $scope.exercise.index == 'undefined') {
 		console.log('check index');
 		$scope.exercise.index = $scope.user.data.exercises.indexOf($scope.exercise)
 	}
-	
+
 	console.log($scope.exercise);
 
 	$scope.save = function (form) {
@@ -433,15 +415,17 @@ angular.module('greyback.controllers', [])
 
 		if (typeof $scope.exercise.index == 'undefined') {
 			$scope.user.data.exercises.push($scope.exercise);
-			$scope.exercise.index = $scope.user.data.exercises.length-1;
+			$scope.exercise.index = $scope.user.data.exercises.length - 1;
 		}
-		
+
 		$scope.user.data.exercises[$scope.exercise.index] = $scope.exercise;
 
 		console.log($scope.user.data.exercises);
 
 		UserService.updateUser($scope.user);
-		$state.go('menu.tabs.teamwork_exercise_view',{exercise: $scope.exercise.index});
+		$state.go('menu.tabs.teamwork_exercise_view', {
+			exercise: $scope.exercise.index
+		});
 		$scope.exercise = {};
 	}
 
@@ -451,5 +435,52 @@ angular.module('greyback.controllers', [])
 		$scope.user.data.exercises.splice($scope.exercise.index, 1);
 		UserService.updateUser($scope.user);
 		$state.go('menu.tabs.teamwork_exercise_results');
+	}
+})
+
+.controller('QuizController', function ($scope, $q, $ionicModal, $timeout, $ionicHistory, $state, ImgCache, PtrService, ngFB, user, ListService, UserService, UtilService) {
+	console.log('QuizController');
+
+	$scope.selfcareQuiz = ListService.selfcareQuiz;
+	
+	$scope.start = function() {
+		$scope.user.data.quiz = {};
+		UserService.updateUser($scope.user).then(function() {
+			$state.go('menu.tabs.growth_quiz_physical');
+		});
+	}
+
+	$scope.quiz = function (step) {
+		console.log('QuizController.quiz');
+		var answers = {};
+		var target = "";
+		switch(step) {
+			case 'physical':
+				answers = $scope.user.data.quiz.physical_question;
+				target = "menu.tabs.growth_quiz_physical_score";
+				break;
+			case 'mental':
+				answers = $scope.user.data.quiz.mental_question;
+				target = "menu.tabs.growth_quiz_mental_score";
+				break;
+			case 'spiritual':
+				answers = $scope.user.data.quiz.spiritual_question;
+				target = "menu.tabs.growth_quiz_spiritual_score";
+				break;
+			case 'emotional':
+				answers = $scope.user.data.quiz.emotional_question;
+				target = "menu.tabs.growth_quiz_emotional_score";
+				$scope.user.data.quiz.taken = moment().format('MMM Do');
+				break;
+		}
+		
+		if(UtilService.countBool(answers) < 4) {
+			alert('Please answer all the questions.');
+		} else {
+			$scope.user.data.quiz[step] = UtilService.sumObj(answers);
+			UserService.updateUser($scope.user).then(function() {
+				$state.go(target);
+			});
+		}
 	}
 })

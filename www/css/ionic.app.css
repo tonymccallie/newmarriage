@@ -10360,3 +10360,7 @@ video {
 
 #signup_page .text-center a {
   font-weight: 800; }
+
+.quiz .item, .quiz .item-content {
+  overflow: auto;
+  white-space: normal; }

@@ -1,0 +1,20 @@
+<ion-view view-title="Growth Quiz">
+	<ion-nav-title>
+		<img src="img/logo.png" class="title-image" />
+	</ion-nav-title>
+	<ion-content>
+		<div class="padding">
+			<div class="button-bar">
+				<a ui-sref="menu.tabs.growth_values" class="button">Values</a>
+				<a ui-sref="menu.tabs.growth_vision" class="button">Vision</a>
+				<a ui-sref="menu.tabs.growth_quiz" class="button">Quiz</a>
+				<!-- <a ui-sref="menu.tabs.growth_90days" class="button">90 Days</a>-->
+			</div>
+			<div class="white-block quiz">
+				<h1>Physical Care Score</h1>
+				{{user.data.quiz.physical}}
+				<a ui-sref="menu.tabs.growth_quiz_mental" class="button button-block">Next</a>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

@@ -1,5 +1,26 @@
 angular.module('greyback.utils', [])
 
+.service('UtilService', function() {
+	var self = this;
+	this.countBool = function (obj) {
+		var count = 0;
+		for (var key in obj) {
+			if (obj[key]) {
+				count++;
+			}
+		}
+		return count;
+	}
+
+	this.sumObj = function (obj) {
+		var count = 0;
+		for (var key in obj) {
+			count += parseInt(obj[key]);
+		}
+		return count;
+	}
+})
+
 .filter('trusted', function ($sce) {
 	return function (url) {
 		return $sce.trustAsResourceUrl(url);

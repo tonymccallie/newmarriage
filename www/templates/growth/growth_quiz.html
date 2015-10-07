@@ -12,9 +12,16 @@
             </div>
             <div class="white-block">
                 <h1>Self-Care Quiz</h1>
-                <p>Choose the answer that fits you best.</p>
+				<div ng-if="!user.data.quiz.taken">
+					<a ui-sref="menu.tabs.growth_quiz_physical" class="button button-block">Start Test</a>
+				</div>
+           		<div ng-if="user.data.quiz.taken">
+           			Last taken: {{user.data.quiz.taken}} <br />
+					{{(user.data.quiz.physical+user.data.quiz.emotional+user.data.quiz.mental+user.data.quiz.spiritual)}}
+					<a ng-click="start()" class="button button-block">Take Test Again</a>
+				</div>
             </div>
-            <a ui-sref="menu.tabs.growth_90days" class="button button-block">Continue to 90 Plan <i class="fa fa-chevron-circle-right"></i></a>
+<!--            <a ui-sref="menu.tabs.growth_90days" class="button button-block">Continue to 90 Plan <i class="fa fa-chevron-circle-right"></i></a>-->
         </div>
     </ion-content>
 </ion-view>

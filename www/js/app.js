@@ -356,6 +356,83 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 		views: {
 			'tab-growth': {
 				templateUrl: "templates/growth/growth_quiz.html",
+				controller: "QuizController"
+			}
+		}
+	})
+	
+	.state('menu.tabs.growth_quiz_physical', {
+		url: "/growth-quiz-physical",
+		views: {
+			'tab-growth': {
+				templateUrl: "templates/growth/growth_quiz_physical.html",
+				controller: "QuizController"
+			}
+		}
+	})
+	
+	.state('menu.tabs.growth_quiz_physical_score', {
+		url: "/growth-quiz-physical-score",
+		views: {
+			'tab-growth': {
+				templateUrl: "templates/growth/growth_quiz_physical_score.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.growth_quiz_mental', {
+		url: "/growth-quiz-mental",
+		views: {
+			'tab-growth': {
+				templateUrl: "templates/growth/growth_quiz_mental.html",
+				controller: "QuizController"
+			}
+		}
+	})
+	
+	.state('menu.tabs.growth_quiz_mental_score', {
+		url: "/growth-quiz-mental-score",
+		views: {
+			'tab-growth': {
+				templateUrl: "templates/growth/growth_quiz_mental_score.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.growth_quiz_emotional', {
+		url: "/growth-quiz-emotional",
+		views: {
+			'tab-growth': {
+				templateUrl: "templates/growth/growth_quiz_emotional.html",
+				controller: "QuizController"
+			}
+		}
+	})
+	
+	.state('menu.tabs.growth_quiz_emotional_score', {
+		url: "/growth-quiz-emotional-score",
+		views: {
+			'tab-growth': {
+				templateUrl: "templates/growth/growth_quiz_emotional_score.html",
+			}
+		}
+	})
+	
+	.state('menu.tabs.growth_quiz_spiritual', {
+		url: "/growth-quiz-spiritual",
+		views: {
+			'tab-growth': {
+				templateUrl: "templates/growth/growth_quiz_spiritual.html",
+				controller: "QuizController"
+			}
+		}
+	})
+	
+	.state('menu.tabs.growth_quiz_spiritual_score', {
+		url: "/growth-quiz-spiritual-score",
+		views: {
+			'tab-growth': {
+				templateUrl: "templates/growth/growth_quiz_spiritual_score.html",
 			}
 		}
 	})
