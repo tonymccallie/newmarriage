@@ -1,27 +1,47 @@
 <ion-view view-title="Growth Quiz">
-    <ion-nav-title>
-        <img src="img/logo.png" class="title-image" />
-    </ion-nav-title>
-    <ion-content>
-        <div class="padding">
-            <div class="button-bar">
-                <a ui-sref="menu.tabs.growth_values" class="button">Values</a>
-                <a ui-sref="menu.tabs.growth_vision" class="button">Vision</a>
-                <a ui-sref="menu.tabs.growth_quiz" class="button">Quiz</a>
-<!--                <a ui-sref="menu.tabs.growth_90days" class="button">90 Days</a>-->
-            </div>
-            <div class="white-block">
-                <h1>Self-Care Quiz</h1>
+	<ion-nav-title>
+		<img src="img/logo.png" class="title-image" />
+	</ion-nav-title>
+	<ion-content>
+		<div class="padding">
+			<div class="button-bar">
+				<a ui-sref="menu.tabs.growth_values" class="button">Values</a>
+				<a ui-sref="menu.tabs.growth_vision" class="button">Vision</a>
+				<a ui-sref="menu.tabs.growth_quiz" class="button">Quiz</a>
+				<!-- <a ui-sref="menu.tabs.growth_90days" class="button">90 Days</a>-->
+			</div>
+			<div class="white-block">
+				<h1>Self-Care Quiz</h1>
 				<div ng-if="!user.data.quiz.taken">
 					<a ui-sref="menu.tabs.growth_quiz_physical" class="button button-block">Start Test</a>
 				</div>
-           		<div ng-if="user.data.quiz.taken">
-           			Last taken: {{user.data.quiz.taken}} <br />
-					{{(user.data.quiz.physical+user.data.quiz.emotional+user.data.quiz.mental+user.data.quiz.spiritual)}}
+				<div ng-if="user.data.quiz.taken">Last taken: {{user.data.quiz.taken}}
+					<div class="circle total">{{(user.data.quiz.physical+user.data.quiz.emotional+user.data.quiz.mental+user.data.quiz.spiritual)}}</div>
 					<a ng-click="start()" class="button button-block">Take Test Again</a>
+					<div class="list list-inset">
+						<label class="item item-input item-stacked-label">Notes on improvements for a better phyiscal score
+							<textarea ng-model="user.data.quiz.phyical_notes" ng-change="updateTextArea('physical_notes')" id="physical_notes"></textarea>
+						</label>
+					</div>
+					<div class="list list-inset">
+						<label class="item item-input item-stacked-label">Notes on improvements for a better emotional score
+							<textarea ng-model="user.data.quiz.emotional_notes" ng-change="updateTextArea('emotional_notes')" id="emotional_notes"></textarea>
+						</label>
+					</div>
+					<div class="list list-inset">
+						<label class="item item-input item-stacked-label">Notes on improvements for a better mental score
+							<textarea ng-model="user.data.quiz.mental_notes" ng-change="updateTextArea('mental_notes')" id="mental_notes"></textarea>
+						</label>
+					</div>
+					<div class="list list-inset">
+						<label class="item item-input item-stacked-label">Notes on improvements for a better spiritual score
+							<textarea ng-model="user.data.quiz.spiritual_notes" ng-change="updateTextArea('spiritual_notes')" id="spiritual_notes"></textarea>
+						</label>
+					</div>
+					<a ng-click="save()" class="button button-block">Save Notes</a>
 				</div>
-            </div>
-<!--            <a ui-sref="menu.tabs.growth_90days" class="button button-block">Continue to 90 Plan <i class="fa fa-chevron-circle-right"></i></a>-->
-        </div>
-    </ion-content>
+			</div>
+			<!-- <a ui-sref="menu.tabs.growth_90days" class="button button-block">Continue to 90 Plan <i class="fa fa-chevron-circle-right"></i></a>-->
+		</div>
+	</ion-content>
 </ion-view>

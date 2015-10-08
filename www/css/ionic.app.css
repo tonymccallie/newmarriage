@@ -10375,3 +10375,13 @@ video {
   background: #f7f7f7; }
 .item-radio input:checked + .radio-icon {
   visibility: visible; }
+
+.circle {
+  border-radius: 50%;
+  background: #ccc;
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  line-height: 150px;
+  text-align: center;
+  font-size: 50px; }

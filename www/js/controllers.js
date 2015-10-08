@@ -449,6 +449,10 @@ angular.module('greyback.controllers', [])
 			$state.go('menu.tabs.growth_quiz_physical');
 		});
 	}
+	
+	$scope.save = function() {
+		UserService.updateUser($scope.user);
+	}
 
 	$scope.quiz = function (step) {
 		console.log('QuizController.quiz');
@@ -477,7 +481,7 @@ angular.module('greyback.controllers', [])
 		if(UtilService.countBool(answers) < 4) {
 			alert('Please answer all the questions.');
 		} else {
-			$scope.user.data.quiz[step] = UtilService.sumObj(answers);
+			$scope.user.data.quiz[step] = UtilService.sumObj(answers) + 1;
 			UserService.updateUser($scope.user).then(function() {
 				$state.go(target);
 			});
