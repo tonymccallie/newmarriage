@@ -46,6 +46,7 @@
 	<feature name="StatusBar">
 		<param name="ios-package" value="CDVStatusBar" onload="true" />
 	</feature>
+	<platform name="ios"></platform>
 	<platform name="android">
 		<preference name="AndroidLaunchMode" value="singleTop"/>
 		<preference name="android-minSdkVersion" value="19" />
