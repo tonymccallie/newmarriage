@@ -40,7 +40,7 @@
 	<gap:plugin name="org.apache.cordova.vibration" />
 	<gap:plugin name="com.ionic.keyboard" version="1.0.2" />
 	<gap:plugin name="nl.kingsquare.background-audio" version="1.0.0" />
-	<gap:plugin name="nl.x-services.plugins.socialsharing" source="plugins.cordova.io" />
+	<gap:plugin name="nl.x-services.plugins.socialsharing" />
 	<gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
 	<gap:plugin name="com.ionic.deploy" version="0.1.6" />
 	<feature name="StatusBar">
