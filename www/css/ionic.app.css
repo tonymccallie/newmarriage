@@ -7698,7 +7698,7 @@ a.button {
   src: url('../fonts/ThreeLeafApp.ttf') format('truetype'); }
 
 @font-face {
-  font-family: 'LatHelveticaNeueLT-ItalicoRegular';
+  font-family: 'HelveticaNeueLT-ItalicRegular';
   src: url('../fonts/HelveticaNeueLT-Italic.ttf') format('truetype'); }
 
 @font-face {
@@ -9809,8 +9809,8 @@ hr {
   height: 1px;
   background: #d0d2d3; }
 
-i {
-  font-family: "HelveticaNeueLT-Roman"; }
+i, em {
+  font-family: "HelveticaNeueLT-ItalicRegular"; }
 
 input[placeholder] {
   color: #fff; }
@@ -10039,7 +10039,7 @@ input[type="radio"] {
 .small-button-text {
   font-size: 10px;
   line-height: 10px;
-  font-family: "HelveticaNeueLT-Roman";
+  font-family: "HelveticaNeueLT-ItalicRegular";
   line-height: 9px; }
 
 .two-line-button {

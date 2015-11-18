@@ -453,6 +453,12 @@ angular.module('greyback.controllers', [])
 	$scope.save = function() {
 		UserService.updateUser($scope.user);
 	}
+	
+	$scope.email = function() {
+		UserService.email($scope.user).then(function(tmpObj) {
+			alert('The results have been emailed.');
+		});
+	}
 
 	$scope.quiz = function (step) {
 		console.log('QuizController.quiz');

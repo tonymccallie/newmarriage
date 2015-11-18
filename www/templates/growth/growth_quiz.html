@@ -13,14 +13,17 @@
 			<div class="white-block">
 				<h1>Self-Care Quiz</h1>
 				<div ng-if="!user.data.quiz.taken">
+					<p>Self Care…. Most people today have a different understanding about Self Care. You may define Self Care as getting a lot of exercise, a balanced diet, prayer and meditation, lots of rest, etc…. All of these are a part of Self Care, but not all that you need.  What we want to help you understand is that Self Care is about life balance. So you may ask, “ what does a balanced life look like?” We believe that scripture gives us the guide to this question. Jesus was asked what is the greatest commandment and He said, “love the Lord your God with all you heart, mind, soul, and strength. The second commandment is to love your neighbor, as you love yourself. Those are the four areas (mentally, physically, spiritually, and emotionally) that Jesus gave us as an example of how to love God and love ourselves. In Luke 2:52 scripture says, “And Jesus grew in wisdom (mind)  stature (body), and in favor with God (soul) and man (heart).  </p>
+					<p>Take the test below and score yourself in each of the four areas.</p>
 					<a ui-sref="menu.tabs.growth_quiz_physical" class="button button-block">Start Test</a>
 				</div>
 				<div ng-if="user.data.quiz.taken">Last taken: {{user.data.quiz.taken}}
+					<p>Now that you have finished your test, take the score you have been given and subtract 50 points from that total. We believe that it takes a score of 50 points just to get up every day and do life (go to work, clean the house, take care of the kids etc.). The score you have left over after your first 50 points, is what you have to give to other people you are in relationship with. Can you see how important Self Care is now? The good news is that whatever you scored today is not your score for life. You can change what you are doing to improve your Self Care. There are lines below each heading of the four areas  to list some ideas you can begin doing to raise your score. Discuss with your spouse how each of you can begin being intentional about this idea of life balance. Your spouse and other relationships will be the beneficiary of your effort. </p>
 					<div class="circle total">{{(user.data.quiz.physical+user.data.quiz.emotional+user.data.quiz.mental+user.data.quiz.spiritual)}}</div>
 					<a ng-click="start()" class="button button-block">Take Test Again</a>
 					<div class="list list-inset">
 						<label class="item item-input item-stacked-label">Notes on improvements for a better phyiscal score
-							<textarea ng-model="user.data.quiz.phyical_notes" ng-change="updateTextArea('physical_notes')" id="physical_notes"></textarea>
+							<textarea ng-model="user.data.quiz.physical_notes" ng-change="updateTextArea('physical_notes')" id="physical_notes"></textarea>
 						</label>
 					</div>
 					<div class="list list-inset">
@@ -39,6 +42,7 @@
 						</label>
 					</div>
 					<a ng-click="save()" class="button button-block">Save Notes</a>
+					<a ng-click="email()" class="button button-block">Email Results to Myself</a>
 				</div>
 			</div>
 			<!-- <a ui-sref="menu.tabs.growth_90days" class="button button-block">Continue to 90 Plan <i class="fa fa-chevron-circle-right"></i></a>-->

@@ -21,7 +21,7 @@ $calm: #808184;
 $lightGrey: #d0d2d3;
 $stable: #62AEB5;
 $font-default: "HelveticaNeueLT-Roman";
-$font-italic: "HelveticaNeueLT-Roman";
+$font-italic: "HelveticaNeueLT-ItalicRegular";
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
@@ -181,7 +181,7 @@ hr {
     height: 1px;
     background: $lightGrey;
 }
-i {
+i, em {
     font-family: $font-italic;
 }
 input[placeholder] {

@@ -155,6 +155,31 @@ angular.module('greyback.services', [])
 
 		return promise;
 	}
+	
+	self.email = function(user) {
+		console.log('UserService.email');
+
+		var promise = $http.post(DOMAIN + '/ajax/users/email', user)
+			.success(function (response, status, headers, config) {
+			switch (response.status) {
+			case 'SUCCESS':
+				self.updateUser(response.data);
+				break;
+			case 'MESSAGE':
+				alert(response.data);
+				break;
+			default:
+				alert('there was a server error for Messages');
+				console.log(response);
+				break;
+			}
+		})
+			.error(function (response, status, headers, config) {
+			console.log(['error', status, headers, config]);
+		});
+
+		return promise;
+	}
 
 	self.logout = function () {
 		console.log('UserService.logout');
