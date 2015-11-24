@@ -338,6 +338,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 		views: {
 			'tab-growth': {
 				templateUrl: "templates/growth/growth_values.html",
+				controller: "UserController"
 			}
 		}
 	})
@@ -347,6 +348,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 		views: {
 			'tab-growth': {
 				templateUrl: "templates/growth/growth_vision.html",
+				controller: "UserController"
 			}
 		}
 	})

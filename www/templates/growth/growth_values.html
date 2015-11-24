@@ -14,9 +14,20 @@
                 <h1>Core Values</h1>
                 <p>Now you are ready to relaunch your marriage. As you have worked through the process of understanding your past unhealthy  patterns and now have converted them to a new Peace Cycle, you are on the road to a new marriage. </p>
 				<p>The following exercise is for you to decide what are the core values you and your spouse want your marriage to represent. Ask yourself the question, " when people look at our marriage what do we want them to see?"  </p>
-				<p>Here is a list of words to get you thinking about what traits are core in your family. List below 5-6 words that you want to describe your marriage. </p>
-				<p>Trusting, Committed, Integrity, Giving, Teamwork, Safety, Loyal, Hospitality, Sacrifice, Authentic, Encouragement, Fun, Intentional, etc......</p>
+				<p>Here is a list of words to get you thinking about what traits are core in your family. </p>
+				<p><i>Trusting, Committed, Integrity, Giving, Teamwork, Safety, Loyal, Hospitality, Sacrifice, Authentic, Encouragement, Fun, Intentional, etc......</i></p>
+				<p>List below 5-6 words that you want to describe your marriage.</p>
+         		<form method="post" ng-submit="process('menu.tabs.growth_vision','growth_values')">
+					<div class="list list-inset">
+						<label class="item item-input item-stacked-label">{{user.User.last_name}} Family Values
+							<textarea rows=8 ng-model="user.data.values" ng-change="updateTextArea('values')" id="values"></textarea>
+						</label>
+					</div>
+				</form>
             </div>
+            <a ng-click="process('menu.tabs.growth_vision','growth_values')" class="button button-block button-positive">Continue to Vision
+				<i class="fa fa-chevron-circle-right"></i>
+			</a>
         </div>
     </ion-content>
 </ion-view>

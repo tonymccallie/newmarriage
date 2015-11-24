@@ -20,6 +20,12 @@
                     </div>
                     <div class="list list-inset">
                         <div class="item item-input">
+                            <input name="spouse_name" ng-model="signupUser.spouse_name" type="text" placeholder="SPOUSE NAME" required />
+                        </div>
+                        <div class="form-errors" ng-show="signupForm.spouse_name.$error && signupForm.$submitted" ng-messages="signupForm.spouse_name.$error" ng-messages-include="templates/errors.html"></div>
+                    </div>
+                    <div class="list list-inset">
+                        <div class="item item-input">
                             <input name="email" ng-model="signupUser.email" type="email" placeholder="EMAIL" required />
                         </div>
                         <div class="form-errors" ng-show="signupForm.email.$error && signupForm.$submitted" ng-messages="signupForm.email.$error" ng-messages-include="templates/errors.html"></div>

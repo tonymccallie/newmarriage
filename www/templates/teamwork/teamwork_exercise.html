@@ -6,7 +6,7 @@
 		<div class="padding">
 			<div class="white-block">
 				<h1>Problem Solving Excercise</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia metus in enim posuere, non venenatis purus pharetra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+				<p>Use the following worksheet in solving a real life issue.  Remember to strive for a win/win.  At any time your pain is triggered, use your Four Steps before going any further.</p>
 				<form name="stepsForm" novalidate="" ng-submit="save(stepsForm)">
 					<div class="list list-inset">
 						<label class="item item-input item-stacked-label">What's the Problem:
@@ -39,8 +39,8 @@
 							<textarea ng-model="exercise.step5" ng-change="updateTextArea('create_exercise_step5')" id="create_exercise_step5"></textarea>
 						</label>
 					</div>
-					<button type="submit" class="button button-block">Save & Continue<i class="fa fa-chevron-circle-right"></i></button>
-					<a ng-click="remove()" ng-if="exercise.index" class="button button-block">Delete</a>
+					<button type="submit" class="button button-block">Save & Continue <i class="fa fa-chevron-circle-right"></i></button>
+					<a ng-click="remove()" ng-if="exercise.index > -1" class="button button-block">Delete</a>
 				</form>
 			</div>
 		</div>

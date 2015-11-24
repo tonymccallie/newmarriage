@@ -580,16 +580,17 @@ li.item {
 .cycles-results {
     display: block;
     position: absolute;
-    margin: 23% 10% 5%;
+    margin: 18% 10% 5%;
     line-height: 15px;
     z-index: 100;
     font-size: 10px;
     h5 {
         text-transform: uppercase;
-        line-height: 10px;
+        line-height: 15px;
         margin-bottom: 0px;
         padding-bottom: 5px;
         font-size: 15px;
+		font-weight: bold;
     }
     img {
         padding: 28%;

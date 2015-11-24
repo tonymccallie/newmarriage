@@ -11,14 +11,14 @@
 					<img src="img/top-left-arrow.svg" class="top-left-arrow" width="100%" />
 				</div>
 				<div class="top-middle">
-					<h5>Truths</h5>
+					<h5>{{user.User.first_name}} Truths</h5>
 					<span ng-repeat="(truth, val) in user.data.usness.truths" ng-if="val">{{truth}}<br /></span>
                 </div>
 				<div class="top-right">
 					<img src="img/top-right-arrow.svg" class="top-right-arrow" width="100%" />
 				</div>
 				<div class="middle-left">
-					<h5>Actions</h5>
+					<h5>{{user.User.spouse_name}} Actions</h5>
                     ----------<br />
                     ----------<br />
                     ----------<br />
@@ -26,7 +26,7 @@
 				</div>
 				<div class="middle-middle"></div>
 				<div class="middle-right">
-					<h5>Actions</h5>
+					<h5>{{user.User.first_name}} Actions</h5>
 					<span ng-repeat="(action, val) in user.data.usness.actions" ng-if="val">{{action}}<br /></span>
                 </div>
 				<div class="bottom-left">
@@ -34,7 +34,7 @@
 				</div>
 				<div class="bottom-middle">
 					<br>
-					<h5>Truths</h5>
+					<h5>{{user.User.spouse_name}} Truths</h5>
                     ----------<br />
                     ----------<br />
                     ----------<br />

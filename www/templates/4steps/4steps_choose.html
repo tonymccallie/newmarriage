@@ -6,7 +6,8 @@
 		<div id="conflict-choose" class="padding">
 			<div class="white-block">
 				<h1>My Four Steps</h1>
-				<p>Feel, cope, truth, act: these Four Steps unlock the reality of a new marriage.</p>
+				<p>Listed below are the Four Steps to self-regulation.  Practicing these on a daily basis is the road to real transformation.</p>
+				<p>Under each step are the words that you chose from your Pain and Peace Cycle.</p>
 				<h2>How I feel right now</h2>
 				<ul class="clearfix list">
 					<li ng-repeat="(label, val) in user.data.usness.pains" ng-if="val" class="4stepslist">{{label}}</li>
@@ -25,9 +26,10 @@
 					<li ng-repeat="(label, val) in user.data.usness.actions" ng-if="val" class="4stepslist">{{label}}</li>
 				</ul>
 				<h1>Conflict Execrise</h1>
-				<p>Think of a recent situation that caused conflict in your relationship.</p>
+				<p>Think of a conflict that recently occurred in your relationship.  Type in the field below the conflict and how you could have worked through your Four Steps.</p>
+				<p><i>Example:  “I was feeling…”;   “I coped by …”; “The truth about me is…”; “And I could have acted differently by doing…”</i></p>
 				<form method="post" ng-submit="process('menu.tabs.teamwork','4steps_choose')">
-					<textarea ng-model="user.data.conflict_excercise"></textarea>
+					<textarea ng-model="user.data.conflict_exercise"></textarea>
 				</form>
 				<a ng-click="clearConflict()" class="button button button-block">Start Over</a>
 			</div>
