@@ -569,99 +569,42 @@ li.item {
     float: left;
     width: 75%;
 }
-//Cylces Circles
+
 .cycles {
-    display: block;
-    position: relative;
-    padding-top: 120;
-    width: 100%;
-    .padding {}
+	padding: 13% 4%;
+	margin: 5% auto;
+	position: relative;
+	height: 0;
+	padding-bottom: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	background: url(../img/circle_arrows.svg) center 45% no-repeat;
+	.block {
+		//border: 1px solid;
+		flex: 1 0 auto;
+    	height:auto;
+		width: 30%;
+		text-align: center;
+		font-size: 3vw;
+		line-height: 3.5vw;
+		align-items: center;
+		&:before {
+			content: '';
+			float: left;
+			padding-top: 100%;
+		}
+		
+		h5 {
+			text-transform: uppercase;
+			margin-bottom: 0px;
+			padding-bottom: .5vw;
+			font-size: 3vw;
+			font-weight: bold;
+		}
+	}
 }
-.cycles-results {
-    display: block;
-    position: absolute;
-    margin: 18% 10% 5%;
-    line-height: 15px;
-    z-index: 100;
-    font-size: 10px;
-    h5 {
-        text-transform: uppercase;
-        line-height: 15px;
-        margin-bottom: 0px;
-        padding-bottom: 5px;
-        font-size: 15px;
-		font-weight: bold;
-    }
-    img {
-        padding: 28%;
-    }
-}
-.circle-cycle {
-    display: block;
-    position: relative;
-    top: 30px;
-    margin-bottom: 30px;
-}
-.top-left {
-    width: 25%;
-    float: left;
-    text-align: center;
-    vertical-align: middle;
-}
-.top-middle {
-    width: 50%;
-    float: left;
-    text-align: center;
-    vertical-align: middle;
-    min-height: 70px;
-}
-.top-right {
-    width: 25%;
-    float: left;
-    text-align: center;
-    img {
-        text-align: left;
-    }
-}
-.middle-left {
-    width: 50%;
-    float: left;
-    text-align: center;
-    vertical-align: middle;
-    min-height: 70px;
-}
-.middle-middle {
-    width: 0%;
-    float: left;
-    text-align: center;
-    vertical-align: middle;
-}
-.middle-right {
-    width: 50%;
-    float: left;
-    text-align: center;
-    vertical-align: middle;
-    min-height: 70px;
-}
-.bottom-left {
-    width: 25%;
-    float: left;
-    text-align: center;
-    vertical-align: middle;
-}
-.bottom-middle {
-    width: 50%;
-    float: left;
-    text-align: center;
-    vertical-align: middle;
-    min-height: 70px;
-}
-.bottom-right {
-    width: 25%;
-    float: left;
-    text-align: center;
-    vertical-align: middle;
-}
+
 .signup {
     margin-top: 20px;
     padding: 15px 0px;
