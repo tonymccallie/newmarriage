@@ -283,6 +283,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 	
 	.state('menu.tabs.teamwork_exercise_view', {
 		url: "/teamwork-exercise-view/:exercise",
+		cache: false,
 		views: {
 			'tab-teamwork': {
 				templateUrl: "templates/teamwork/teamwork_exercise_view.html",
@@ -290,9 +291,19 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		},
 		resolve: {
-			exercise: function (UserService, $stateParams) {
+			exercise: function ($q, $state, UserService, $stateParams) {
 				console.log('menu.tabs.teamwork_exercise_view.resolve');
-				return UserService.exercise($stateParams.exercise);
+				var deferred = $q.defer();
+				UserService.exercise($stateParams.exercise).then(function (hasExercise) {
+					if (hasExercise) {
+						deferred.resolve(hasExercise);
+					} else {
+						$state.go('menu.tabs.teamwork_exercise_results');
+						//deferred.reject('Not logged in');
+					}
+				});
+
+				return deferred.promise;
 			}
 		}
 
@@ -300,6 +311,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 	
 	.state('menu.tabs.teamwork_exercise_edit', {
 		url: "/teamwork-exercise-edit/:exercise",
+		cache: false,
 		views: {
 			'tab-teamwork': {
 				templateUrl: "templates/teamwork/teamwork_exercise.html",
@@ -307,9 +319,18 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		},
 		resolve: {
-			exercise: function (UserService, $stateParams) {
+			exercise: function ($q, $state, UserService, $stateParams) {
 				console.log('menu.tabs.teamwork_exercise_edit.resolve');
-				return UserService.exercise($stateParams.exercise);
+				var deferred = $q.defer();
+				UserService.exercise($stateParams.exercise).then(function (hasExercise) {
+					if (hasExercise) {
+						deferred.resolve(hasExercise);
+					} else {
+						$state.go('menu.tabs.teamwork_exercise_results');
+					}
+				});
+
+				return deferred.promise;
 			}
 		}
 

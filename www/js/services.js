@@ -189,14 +189,13 @@ angular.module('greyback.services', [])
 	}
 
 	self.exercise = function (exercise) {
-		console.log('UserService.exercise');
+		console.log(['UserService.exercise',exercise]);
 		var deferred = $q.defer();
-		if (self.user) {
-			console.log(self.user.data.exercises[exercise]);
+		if (self.user && exercise >= 0) {
 			deferred.resolve(self.user.data.exercises[exercise]);
 		} else {
 			$state.go('menu.tabs.teamwork');
-			deferred.resolve({});
+			deferred.resolve(false);
 		}
 
 

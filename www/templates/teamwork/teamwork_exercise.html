@@ -11,7 +11,6 @@
 					<div class="list list-inset">
 						<label class="item item-input item-stacked-label">What's the Problem:
 							<input type="text" value="" ng-model="exercise.problem" />
-							<input type="text" ng-model="exercise.index" />
 						</label>
 					</div>
 					<div class="list list-inset">
@@ -40,7 +39,7 @@
 						</label>
 					</div>
 					<button type="submit" class="button button-block">Save & Continue <i class="fa fa-chevron-circle-right"></i></button>
-					<a ng-click="remove()" ng-if="exercise.index > -1" class="button button-block">Delete</a>
+					<a ng-click="remove()" ng-if="exerciseIndex() > -1" class="button button-block">Delete</a>
 				</form>
 			</div>
 		</div>

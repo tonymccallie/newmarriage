@@ -288,9 +288,8 @@ angular.module('greyback.controllers', [])
 			});
 			UserService.syncUser($scope.user).then(function (data) {
 				$ionicLoading.hide();
-				console.log($scope.user);
+				$state.go(next);
 			});
-			$state.go(next);
 		}
 	}
 
@@ -392,15 +391,10 @@ angular.module('greyback.controllers', [])
 .controller('ExerciseController', function ($scope, $q, $ionicModal, $timeout, $ionicHistory, $state, ImgCache, PtrService, ngFB, user, exercise, UserService) {
 	console.log('ExerciseController');
 	$scope.exercise = exercise;
-
-	console.log(typeof $scope.exercise.index);
-
-	if (!typeof $scope.exercise.index == 'undefined') {
-		console.log('check index');
-		$scope.exercise.index = $scope.user.data.exercises.indexOf($scope.exercise)
+	
+	$scope.exerciseIndex = function() {
+		return $scope.user.data.exercises.indexOf($scope.exercise);
 	}
-
-	console.log($scope.exercise);
 
 	$scope.save = function (form) {
 		console.log('ExcerciseController.save');
@@ -412,28 +406,26 @@ angular.module('greyback.controllers', [])
 			$scope.user.data.exercises = [];
 		}
 
-		if (typeof $scope.exercise.index == 'undefined') {
+		if($scope.user.data.exercises.indexOf($scope.exercise) >= 0) {
+			$scope.user.data.exercises[$scope.user.data.exercises.indexOf($scope.exercise)] = $scope.exercise;
+		} else {
 			$scope.user.data.exercises.push($scope.exercise);
-			$scope.exercise.index = $scope.user.data.exercises.length - 1;
 		}
 
-		$scope.user.data.exercises[$scope.exercise.index] = $scope.exercise;
-
-		console.log($scope.user.data.exercises);
-
-		UserService.updateUser($scope.user);
-		$state.go('menu.tabs.teamwork_exercise_view', {
-			exercise: $scope.exercise.index
+		UserService.updateUser($scope.user).then(function() {
+			$state.go('menu.tabs.teamwork_exercise_view', {
+				exercise: $scope.user.data.exercises.indexOf($scope.exercise)
+			});
 		});
-		$scope.exercise = {};
+		//$scope.exercise = {};
 	}
 
 	$scope.remove = function () {
 		console.log('ExcerciseController.remove');
-		console.log($scope.exercise.index);
-		$scope.user.data.exercises.splice($scope.exercise.index, 1);
-		UserService.updateUser($scope.user);
-		$state.go('menu.tabs.teamwork_exercise_results');
+		$scope.user.data.exercises.splice($scope.user.data.exercises.indexOf($scope.exercise), 1);
+		UserService.updateUser($scope.user).then(function() {
+			$state.go('menu.tabs.teamwork_exercise_results');
+		});
 	}
 })
 
