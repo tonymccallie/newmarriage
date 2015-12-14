@@ -386,6 +386,14 @@ angular.module('greyback.controllers', [])
 	$scope.clearConflict = function () {
 		$scope.user.data.conflict_exercise = "";
 	}
+	
+	$scope.email = function(template, problem_index) {
+		UserService.updateUser($scope.user).then(function() {
+			UserService.email($scope.user, template, problem_index).then(function(tmpObj) {
+				alert('The results have been emailed.');
+			});
+		});
+	}
 })
 
 .controller('ExerciseController', function ($scope, $q, $ionicModal, $timeout, $ionicHistory, $state, ImgCache, PtrService, ngFB, user, exercise, UserService) {
@@ -393,6 +401,7 @@ angular.module('greyback.controllers', [])
 	$scope.exercise = exercise;
 	
 	$scope.exerciseIndex = function() {
+		//console.log([$scope.user.data.exercises,$scope.exercise],$scope.user.data.exercises.indexOf($scope.exercise));
 		return $scope.user.data.exercises.indexOf($scope.exercise);
 	}
 
@@ -427,6 +436,14 @@ angular.module('greyback.controllers', [])
 			$state.go('menu.tabs.teamwork_exercise_results');
 		});
 	}
+	
+	$scope.email = function(template, problem_index) {
+		UserService.updateUser($scope.user).then(function() {
+			UserService.email($scope.user, template, problem_index).then(function(tmpObj) {
+				alert('The results have been emailed.');
+			});
+		});
+	}
 })
 
 .controller('QuizController', function ($scope, $q, $ionicModal, $timeout, $ionicHistory, $state, ImgCache, PtrService, ngFB, user, ListService, UserService, UtilService) {
@@ -445,9 +462,11 @@ angular.module('greyback.controllers', [])
 		UserService.updateUser($scope.user);
 	}
 	
-	$scope.email = function() {
-		UserService.email($scope.user).then(function(tmpObj) {
-			alert('The results have been emailed.');
+	$scope.email = function(template, problem_index) {
+		UserService.updateUser($scope.user).then(function() {
+			UserService.email($scope.user, template, problem_index).then(function(tmpObj) {
+				alert('The results have been emailed.');
+			});
 		});
 	}
 

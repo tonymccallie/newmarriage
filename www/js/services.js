@@ -156,10 +156,10 @@ angular.module('greyback.services', [])
 		return promise;
 	}
 	
-	self.email = function(user, template) {
+	self.email = function(user, template, problem_index) {
 		console.log('UserService.email');
 
-		var promise = $http.post(DOMAIN + '/ajax/users/email/'+template, user)
+		var promise = $http.post(DOMAIN + '/ajax/users/email/'+template+'/'+problem_index, user)
 			.success(function (response, status, headers, config) {
 			switch (response.status) {
 			case 'SUCCESS':
