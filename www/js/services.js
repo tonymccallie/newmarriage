@@ -38,26 +38,26 @@ angular.module('greyback.services', [])
 		console.log('UserService.loginUser');
 		var promise = $http.post(DOMAIN + '/ajax/users/login', user)
 			.success(function (response, status, headers, config) {
-			switch (response.status) {
-			case 'SUCCESS':
-				response.data.data = $localStorage.toObj(response.data.User.json);
-				self.updateUser(response.data).then(function () {
-					$state.go('menu.tabs.home');
-				});
-				break;
-			case 'MESSAGE':
-				alert(response.data);
-				$state.go('login');
-				break;
-			default:
-				alert('there was a server error for Messages');
-				console.log(response);
-				break;
-			}
-		})
+				switch (response.status) {
+					case 'SUCCESS':
+						response.data.data = $localStorage.toObj(response.data.User.json);
+						self.updateUser(response.data).then(function () {
+							$state.go('menu.tabs.home');
+						});
+						break;
+					case 'MESSAGE':
+						alert(response.data);
+						$state.go('login');
+						break;
+					default:
+						alert('there was a server error for Messages');
+						console.log(response);
+						break;
+				}
+			})
 			.error(function (response, status, headers, config) {
-			console.log(['error', status, headers, config]);
-		});
+				console.log(['error', status, headers, config]);
+			});
 		return promise;
 	}
 
@@ -66,18 +66,18 @@ angular.module('greyback.services', [])
 		var promise = $http.post(DOMAIN + '/ajax/users/facebook', fbuser)
 			.success(function (response, status, headers, config) {
 
-			if (response.status === 'SUCCESS') {
-				self.updateUser(response.data).then(function () {
-					$state.go('menu.tabs.home');
-				});
-			} else {
-				alert('there was a server error for Messages');
-				console.log(response);
-			}
-		})
+				if (response.status === 'SUCCESS') {
+					self.updateUser(response.data).then(function () {
+						$state.go('menu.tabs.home');
+					});
+				} else {
+					alert('there was a server error for Messages');
+					console.log(response);
+				}
+			})
 			.error(function (response, status, headers, config) {
-			console.log(['error', status, headers, config]);
-		});
+				console.log(['error', status, headers, config]);
+			});
 		return promise;
 	}
 
@@ -100,25 +100,53 @@ angular.module('greyback.services', [])
 		console.log('UserService.createUser');
 		var promise = $http.post(DOMAIN + '/ajax/users/register', user)
 			.success(function (response, status, headers, config) {
-			switch (response.status) {
-			case 'SUCCESS':
-				self.updateUser(response.data).then(function () {
-					$state.go('menu.tabs.home');
-				});
-				break;
-			case 'MESSAGE':
-				alert(response.data);
-				$state.go('login');
-				break;
-			default:
-				alert('there was a server error for Messages');
-				console.log(response);
-				break;
-			}
-		})
+				switch (response.status) {
+					case 'SUCCESS':
+						self.updateUser(response.data).then(function () {
+							$state.go('menu.tabs.home');
+						});
+						break;
+					case 'MESSAGE':
+						alert(response.data);
+						$state.go('login');
+						break;
+					default:
+						alert('there was a server error for Messages');
+						console.log(response);
+						break;
+				}
+			})
 			.error(function (response, status, headers, config) {
-			console.log(['error', status, headers, config]);
-		});
+				console.log(['error', status, headers, config]);
+			});
+		return promise;
+	}
+
+	self.recoverUser = function (user) {
+		console.log(['UserService.recoverUser'], user);
+		var promise = $http.post(DOMAIN + '/ajax/users/recover', user)
+			.success(function (response, status, headers, config) {
+				switch (response.status) {
+					case 'SUCCESS':
+						alert('An email has been sent to this address with password reset instructions.');
+						$state.go('login');
+						break;
+					case 'MESSAGE':
+						alert(response.data);
+						$state.go('login');
+						break;
+					case 'ERROR':
+						alert(response.data);
+						break;
+					default:
+						alert('there was a server error for Messages');
+						console.log(response);
+						break;
+				}
+			})
+			.error(function (response, status, headers, config) {
+				console.log(['error', status, headers, config]);
+			});
 		return promise;
 	}
 
@@ -136,47 +164,47 @@ angular.module('greyback.services', [])
 
 		var promise = $http.post(DOMAIN + '/ajax/users/update', user)
 			.success(function (response, status, headers, config) {
-			switch (response.status) {
-			case 'SUCCESS':
-				self.updateUser(response.data);
-				break;
-			case 'MESSAGE':
-				alert(response.data);
-				break;
-			default:
-				alert('there was a server error for Messages');
-				console.log(response);
-				break;
-			}
-		})
+				switch (response.status) {
+					case 'SUCCESS':
+						self.updateUser(response.data);
+						break;
+					case 'MESSAGE':
+						alert(response.data);
+						break;
+					default:
+						alert('there was a server error for Messages');
+						console.log(response);
+						break;
+				}
+			})
 			.error(function (response, status, headers, config) {
-			console.log(['error', status, headers, config]);
-		});
+				console.log(['error', status, headers, config]);
+			});
 
 		return promise;
 	}
-	
-	self.email = function(user, template, problem_index) {
+
+	self.email = function (user, template, problem_index) {
 		console.log('UserService.email');
 
-		var promise = $http.post(DOMAIN + '/ajax/users/email/'+template+'/'+problem_index, user)
+		var promise = $http.post(DOMAIN + '/ajax/users/email/' + template + '/' + problem_index, user)
 			.success(function (response, status, headers, config) {
-			switch (response.status) {
-			case 'SUCCESS':
-				self.updateUser(response.data);
-				break;
-			case 'MESSAGE':
-				alert(response.data);
-				break;
-			default:
-				alert('there was a server error for Messages');
-				console.log(response);
-				break;
-			}
-		})
+				switch (response.status) {
+					case 'SUCCESS':
+						self.updateUser(response.data);
+						break;
+					case 'MESSAGE':
+						alert(response.data);
+						break;
+					default:
+						alert('there was a server error for Messages');
+						console.log(response);
+						break;
+				}
+			})
 			.error(function (response, status, headers, config) {
-			console.log(['error', status, headers, config]);
-		});
+				console.log(['error', status, headers, config]);
+			});
 
 		return promise;
 	}
@@ -189,7 +217,7 @@ angular.module('greyback.services', [])
 	}
 
 	self.exercise = function (exercise) {
-		console.log(['UserService.exercise',exercise]);
+		console.log(['UserService.exercise', exercise]);
 		var deferred = $q.defer();
 		if (self.user && exercise >= 0) {
 			deferred.resolve(self.user.data.exercises[exercise]);

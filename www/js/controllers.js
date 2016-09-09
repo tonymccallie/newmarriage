@@ -115,8 +115,16 @@ angular.module('greyback.controllers', [])
 	}
 })
 
-.controller('ForgotController', function ($scope, ngFB) {
+.controller('ForgotController', function ($scope, UserService) {
 	console.log('ForgotController');
+	$scope.forgotUser = {};
+	
+	$scope.forgot = function (form) {
+		console.log(['ForgotController.forgot', $scope.forgotUser]);
+		if (form.$valid) {
+			UserService.recoverUser($scope.forgotUser);
+		}
+	}
 })
 
 .controller('HomeController', function ($scope, $q, $ionicModal, $timeout, $ionicSlideBoxDelegate, ImgCache, PtrService, ngFB, user) {

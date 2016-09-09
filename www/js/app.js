@@ -20,7 +20,7 @@ var onclickFix = function (html) {
 	return html.replace(/href=\"(.+?)\"/gi, 'onclick="window.open(\'$1\',\'_system\',\'location=yes\');"');
 }
 
-angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.core', 'ionic.service.push', 'ionic.service.deploy', 'ionic.service.analytics', 'ionic-datepicker','ngOpenFB', 'ngMessages', 'greyback.controllers', 'greyback.services', 'greyback.utils'])
+angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.core', 'ionic.service.push', 'ionic.service.deploy', 'ionic.service.analytics', 'ionic-datepicker', 'ngOpenFB', 'ngMessages', 'greyback.controllers', 'greyback.services', 'greyback.utils'])
 
 .run(function ($rootScope, $ionicPlatform, $ionicAnalytics, $cordovaSplashscreen, ImgCache, ngFB) {
 	console.log('App.run');
@@ -96,7 +96,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.pain', {
 		url: "/pain",
 		views: {
@@ -105,7 +105,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.pain_my_cycle', {
 		url: "/pain-my-cycle",
 		views: {
@@ -115,7 +115,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.pain_my_results', {
 		url: "/pain-my-results",
 		views: {
@@ -124,7 +124,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.pain_spouse_cycle', {
 		url: "/pain-spouse-cycle",
 		views: {
@@ -134,7 +134,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.pain_our_results', {
 		url: "/pain-our-results",
 		views: {
@@ -143,7 +143,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.peace', {
 		url: "/peace",
 		views: {
@@ -152,7 +152,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.peace_my_cycle', {
 		url: "/peace-my-cycle",
 		views: {
@@ -162,7 +162,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.peace_my_results', {
 		url: "/peace-my-results",
 		views: {
@@ -171,7 +171,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.peace_spouse_cycle', {
 		url: "/peace-spouse-cycle",
 		views: {
@@ -181,7 +181,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.peace_our_results', {
 		url: "/peace-our-results",
 		views: {
@@ -190,7 +190,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.4steps', {
 		url: "/4steps",
 		views: {
@@ -199,7 +199,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.4steps_info', {
 		url: "/4steps-info",
 		views: {
@@ -208,7 +208,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.4steps_choose', {
 		url: "/4steps-choose",
 		views: {
@@ -218,7 +218,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.4steps_exercise', {
 		url: "/4steps-exercise",
 		views: {
@@ -227,7 +227,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.teamwork', {
 		url: "/teamwork",
 		views: {
@@ -236,7 +236,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.teamwork_info', {
 		url: "/teamwork-info",
 		views: {
@@ -245,7 +245,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.teamwork_video', {
 		url: "/teamwork-video",
 		views: {
@@ -254,7 +254,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.teamwork_exercise', {
 		url: "/teamwork-exercise",
 		views: {
@@ -263,7 +263,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.teamwork_exercise_create', {
 		url: "/teamwork-exercise-create",
 		views: {
@@ -280,7 +280,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 		}
 
 	})
-	
+
 	.state('menu.tabs.teamwork_exercise_view', {
 		url: "/teamwork-exercise-view/:exercise",
 		cache: false,
@@ -308,7 +308,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 		}
 
 	})
-	
+
 	.state('menu.tabs.teamwork_exercise_edit', {
 		url: "/teamwork-exercise-edit/:exercise",
 		cache: false,
@@ -335,8 +335,8 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 		}
 
 	})
-    
-    .state('menu.tabs.teamwork_exercise_results', {
+
+	.state('menu.tabs.teamwork_exercise_results', {
 		url: "/teamwork-exercise-results",
 		views: {
 			'tab-teamwork': {
@@ -344,7 +344,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.growth', {
 		url: "/growth",
 		views: {
@@ -353,7 +353,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.growth_values', {
 		url: "/growth-values",
 		views: {
@@ -363,7 +363,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.growth_vision', {
 		url: "/growth-vision",
 		views: {
@@ -373,7 +373,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.growth_quiz', {
 		url: "/growth-quiz",
 		views: {
@@ -383,7 +383,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.growth_quiz_physical', {
 		url: "/growth-quiz-physical",
 		views: {
@@ -393,7 +393,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.growth_quiz_physical_score', {
 		url: "/growth-quiz-physical-score",
 		views: {
@@ -402,7 +402,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.growth_quiz_mental', {
 		url: "/growth-quiz-mental",
 		views: {
@@ -412,7 +412,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.growth_quiz_mental_score', {
 		url: "/growth-quiz-mental-score",
 		views: {
@@ -421,7 +421,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.growth_quiz_emotional', {
 		url: "/growth-quiz-emotional",
 		views: {
@@ -431,7 +431,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.growth_quiz_emotional_score', {
 		url: "/growth-quiz-emotional-score",
 		views: {
@@ -440,7 +440,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.growth_quiz_spiritual', {
 		url: "/growth-quiz-spiritual",
 		views: {
@@ -450,7 +450,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.growth_quiz_spiritual_score', {
 		url: "/growth-quiz-spiritual-score",
 		views: {
@@ -459,7 +459,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.growth_quiz_results', {
 		url: "/growth-quiz-results",
 		views: {
@@ -468,7 +468,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.growth_90days', {
 		url: "/growth-90days",
 		views: {
@@ -477,7 +477,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.about', {
 		url: "/about",
 		views: {
@@ -495,7 +495,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.intensives', {
 		url: "/intensives",
 		views: {
@@ -504,7 +504,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.therapists', {
 		url: "/therapists",
 		views: {
@@ -513,7 +513,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.resources', {
 		url: "/resources",
 		views: {
@@ -522,7 +522,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.products', {
 		url: "/products",
 		views: {
@@ -531,7 +531,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.app_info', {
 		url: "/app_info",
 		views: {
@@ -540,7 +540,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.settings', {
 		url: "/settings",
 		views: {
@@ -549,7 +549,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.profile', {
 		url: "/profile",
 		cache: false,
@@ -560,7 +560,7 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 			}
 		}
 	})
-	
+
 	.state('menu.tabs.notifications', {
 		url: "/notifications",
 		views: {
@@ -587,12 +587,12 @@ angular.module('greyback', ['ionic', 'ngCordova', 'ImgCache', 'ionic.service.cor
 		templateUrl: "templates/user/forgot.html",
 		controller: 'ForgotController'
 	})
-	
+
 	.state('terms', {
 		url: "/terms",
 		templateUrl: "templates/static/terms.html"
 	})
-	
+
 	.state('privacy', {
 		url: "/privacy",
 		templateUrl: "templates/static/privacy.html"

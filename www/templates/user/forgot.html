@@ -2,13 +2,14 @@
 	<ion-content class="user_form" id="forgot_page" has-bouncing="false">
 		<div class="padding">
 			<div class="white-box">
-				<form>
+				<form name="forgotForm" novalidate="" ng-submit="forgot(forgotForm)">
 					<div class="list list-inset">
-						<div class="item item-input">
-							<input ng-model="User.username" type="text" placeholder="EMAIL" />
+						<div class="item item-input" ng-class="{ 'has-errors' : forgotUser.email.$invalid && forgotForm.$submitted, 'no-errors' : forgotForm.email.$valid  && forgotForm.$submitted}">
+							<input name="email" ng-model="forgotUser.email" type="email" placeholder="EMAIL" required />
 						</div>
+						<div class="form-errors" ng-show="forgotForm.email.$error && forgotForm.$submitted" ng-messages="forgotForm.email.$error" ng-messages-include="templates/errors.html"></div>
 					</div>
-					<input ng-click="signup()" type="submit" value="Reset Password" class="button button-block button-positive" />
+					<input type="submit" value="Reset Password" class="button button-block button-positive" />
 				</form>
 				<div class="text-center">
 					<a ui-sref="login">Return to login</a>
