@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8' ?>
-<widget id="net.greyback.newmarriage" version="1.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<widget id="net.greyback.newmarriage" version="1.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
 	<name>New Marriage</name>
 	<description>5 Days to a New Marriage</description>
 	<author email="info@greyback.net" href="http://greyback.net/">GreyBack Labs, LLP</author>
@@ -20,28 +20,23 @@
 	<preference name="disable-cursor" value="false" />
 	<preference name="android-minSdkVersion" value="7" />
 	<preference name="android-installLocation" value="auto" />
-	<gap:plugin name="org.apache.cordova.battery-status" />
-	<gap:plugin name="org.apache.cordova.camera" />
-	<gap:plugin name="org.apache.cordova.media-capture" />
-	<gap:plugin name="org.apache.cordova.console" />
-	<gap:plugin name="org.apache.cordova.contacts" />
-	<gap:plugin name="org.apache.cordova.device" />
-	<gap:plugin name="org.apache.cordova.device-motion" />
-	<gap:plugin name="org.apache.cordova.device-orientation" />
-	<gap:plugin name="org.apache.cordova.dialogs" />
-	<gap:plugin name="org.apache.cordova.file" />
-	<gap:plugin name="org.apache.cordova.file-transfer" />
-	<gap:plugin name="org.apache.cordova.geolocation" />
-	<gap:plugin name="org.apache.cordova.globalization" />
-	<gap:plugin name="org.apache.cordova.inappbrowser" />
-	<gap:plugin name="org.apache.cordova.media" />
-	<gap:plugin name="org.apache.cordova.network-information" />
-	<gap:plugin name="org.apache.cordova.splashscreen" />
-	<gap:plugin name="org.apache.cordova.vibration" />
-	<gap:plugin name="com.ionic.keyboard" />
-	<gap:plugin name="nl.x-services.plugins.socialsharing" />
-	<gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
-	<gap:plugin name="com.ionic.deploy" version="0.1.6" />
+	<plugin name="org.apache.cordova.camera" />
+	<plugin name="org.apache.cordova.media-capture" />
+	<plugin name="org.apache.cordova.console" />
+	<plugin name="org.apache.cordova.device" />
+	<plugin name="org.apache.cordova.device-motion" />
+	<plugin name="org.apache.cordova.device-orientation" />
+	<plugin name="org.apache.cordova.dialogs" />
+	<plugin name="org.apache.cordova.file" />
+	<plugin name="org.apache.cordova.file-transfer" />
+	<plugin name="org.apache.cordova.geolocation" />
+	<plugin name="org.apache.cordova.inappbrowser" />
+	<plugin name="org.apache.cordova.media" />
+	<plugin name="org.apache.cordova.network-information" />
+	<plugin name="org.apache.cordova.splashscreen" />
+	<plugin name="org.apache.cordova.vibration" />
+	<plugin name="com.ionic.keyboard" source="pgb" />
+	<plugin name="nl.x-services.plugins.socialsharing" />
 	<feature name="StatusBar">
 		<param name="ios-package" value="CDVStatusBar" onload="true" />
 	</feature>
