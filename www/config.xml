@@ -17,6 +17,7 @@
 			<param name="ios-package" onload="true" value="CDVStatusBar" />
 		</feature>
 		<plugin name="cordova-plugin-device" spec="~1.1.2" />
+		<plugin name="cordova-plugin-file" spec="3.0.0" source="pgb" />
 		<plugin name="cordova-plugin-console" spec="~1.0.3" />
 		<plugin name="cordova-plugin-whitelist" spec="~1.2.2" />
 		<plugin name="cordova-plugin-splashscreen" spec="~3.2.2" />
@@ -27,6 +28,43 @@
 			<preference name="AndroidLaunchMode" value="singleTop" />
 			<preference name="android-minSdkVersion" value="19" />
 		</platform>
+
+		<!--
+			<preference name="permissions" value="none" />
+			<preference name="orientation" value="default" />
+			<preference name="target-device" value="universal" />
+			<preference name="fullscreen" value="true" />
+			<preference name="webviewbounce" value="true" />
+			<preference name="prerendered-icon" value="true" />
+			<preference name="stay-in-webview" value="false" />
+			<preference name="ios-statusbarstyle" value="black-opaque" />
+			<preference name="detect-data-types" value="true" />
+			<preference name="exit-on-suspend" value="false" />
+			<preference name="show-splash-screen-spinner" value="true" />
+			<preference name="auto-hide-splash-screen" value="false" />
+			<preference name="disable-cursor" value="false" />
+			<preference name="android-minSdkVersion" value="7" />
+			<preference name="android-installLocation" value="auto" />
+			<plugin name="org.apache.cordova.camera" />
+			<plugin name="org.apache.cordova.media-capture" />
+			<plugin name="org.apache.cordova.console" />
+			<plugin name="org.apache.cordova.device" />
+			<plugin name="org.apache.cordova.device-motion" />
+			<plugin name="org.apache.cordova.device-orientation" />
+			<plugin name="org.apache.cordova.dialogs" />
+			<plugin name="org.apache.cordova.file" />
+			<plugin name="org.apache.cordova.file-transfer" />
+			<plugin name="org.apache.cordova.geolocation" />
+			<plugin name="org.apache.cordova.inappbrowser" />
+			<plugin name="org.apache.cordova.media" />
+			<plugin name="org.apache.cordova.network-information" />
+			<plugin name="org.apache.cordova.splashscreen" />
+			<plugin name="org.apache.cordova.vibration" />
+			<plugin name="nl.x-services.plugins.socialsharing" />
+			<plugin name="ionic-plugin-keyboard" spec="~2.2.1"/>
+		-->
+
+
 		<gap:splash src="splash.png" />
 		<icon src="icon.png" />
 		<icon gap:platform="ios" src="resources/ios/icon/icon.png" width="57" height="57" />
