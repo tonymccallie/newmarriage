@@ -10,7 +10,7 @@
 		<preference name="DisallowOverscroll" value="true" />
 		<preference name="SplashScreenDelay" value="2000" />
 		<preference name="FadeSplashScreenDuration" value="1000" />
-		<preference name="android-minSdkVersion" value="" />
+		<preference name="android-minSdkVersion" value="19" />
 		<preference name="BackupWebStorage" value="none" />
 		<preference name="SplashScreen" value="screen" />
 		<feature name="StatusBar">
@@ -22,9 +22,6 @@
 		<plugin name="cordova-plugin-splashscreen" spec="~3.2.2" />
 		<plugin name="cordova-plugin-statusbar" spec="~2.1.3" />
 		<plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
-		<feature name="StatusBar">
-			<param name="ios-package" value="CDVStatusBar" onload="true" />
-		</feature>
 		<platform name="ios"></platform>
 		<platform name="android">
 			<preference name="AndroidLaunchMode" value="singleTop" />
