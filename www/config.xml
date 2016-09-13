@@ -36,6 +36,7 @@
 	<plugin name="org.apache.cordova.splashscreen" />
 	<plugin name="org.apache.cordova.vibration" />
 	<plugin name="nl.x-services.plugins.socialsharing" />
+	<plugin name="ionic-plugin-keyboard" spec="~2.2.1"/>
 	<feature name="StatusBar">
 		<param name="ios-package" value="CDVStatusBar" onload="true" />
 	</feature>
