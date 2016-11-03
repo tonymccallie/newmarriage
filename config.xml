@@ -28,8 +28,8 @@
 		<plugin name="ionic-plugin-keyboard" />
 		<plugin name="cordova-plugin-inappbrowser" />
 		<plugin spec="https://github.com/jeduan/cordova-plugin-facebook4">
-			<param name="APP_ID" value="512626388922766" />
-			<param name="APP_NAME" value="GoAmarillo" />
+			<param name="APP_ID" value="1640442856222427" />
+			<param name="APP_NAME" value="NewMarriage" />
 		</plugin>
 		<feature name="StatusBar">
 			<param name="ios-package" onload="true" value="CDVStatusBar" />
