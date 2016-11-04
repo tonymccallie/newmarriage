@@ -53,7 +53,7 @@ angular.module('greyback.controllers', [])
 	}
 })
 
-.controller('LoginController', function ($scope, ngFB, UserService) {
+.controller('LoginController', function ($scope, ngFB, UserService, FacebookService) {
 	console.log('LoginController');
 	$scope.loginUser = {};
 
@@ -66,7 +66,16 @@ angular.module('greyback.controllers', [])
 		}
 	}
 
+	$scope.fblogout = function () {
+		FacebookService.logout();
+	}
+
 	$scope.fblogin = function () {
+		console.log('UserController.fblogin');
+		FacebookService.login();
+	}
+	
+	$scope.fbloginX = function () {
 		console.log('LoginController.fblogin');
 		ngFB.login({
 			scope: 'email,public_profile'
@@ -93,7 +102,7 @@ angular.module('greyback.controllers', [])
 		});
 	}
 
-	$scope.fblogout = function () {
+	$scope.fblogoutX = function () {
 		console.log('fblogout');
 		ngFB.logout().then(function (response) {
 			console.log('logout');

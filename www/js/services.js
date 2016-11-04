@@ -231,6 +231,110 @@ angular.module('greyback.services', [])
 	}
 })
 
+.service('FacebookService', function ($q, $ionicLoading, $localStorage, $data, $state, UserService) {
+	console.warn('FacebookService');
+	var self = this;
+	var config = {
+		facebook: {
+			name: 'FacebookService.facebook',
+			url: '/ajax/users/facebook',
+			variable: 'user'
+		}
+	};
+
+	self.user = {};
+
+	//DUMMY CODE FOR DESKTOP DEV
+	if (typeof facebookConnectPlugin == 'undefined') {
+		facebookConnectPlugin = {
+			login: function (options, success, error) {
+				success({
+					authResponse: {
+						accessToken: '123456'
+					}
+				});
+			},
+			logout: function (success, error) {
+				success({});
+			},
+			api: function (auth, rando, success, error) {
+				success({
+					first_name: 'Tony',
+					last_name: 'McCallie',
+					email: 'tonymccallie@gmail.com',
+					id: '1234567'
+				});
+			}
+		}
+	}
+	//END DUMMY
+
+	self.logout = function () {
+		facebookConnectPlugin.logout(function (success) {
+			console.log(['logout success', success]);
+		}, function (error) {
+			console.log(['logout error', error]);
+		});
+	}
+
+	//User hits the fb login button
+	self.login = function () {
+		console.log('FacebookService.login');
+
+		$ionicLoading.show({
+			template: 'Logging in...'
+		});
+
+		// Ask the permissions you need. You can learn more about
+		// FB permissions here: https://developers.facebook.com/docs/facebook-login/permissions/v2.4
+		facebookConnectPlugin.login(['email', 'public_profile'], function (success) {
+			console.warn(['FB connect success', success]);
+			getFacebookProfileInfo(success.authResponse).then(function (profileInfo) {
+				console.log(['profileInfo', profileInfo]);
+
+				UserService.saveFacebook(profileInfo).then(function () {
+					$state.go('menu.tabs.home');
+				});
+
+
+				//TODO create user here
+//				$data.post(config.facebook, self, profileInfo).then(function (data) {
+//					//					UserService.saveFacebook(user).then(function (user) {
+//					//						$scope.user = user;
+//					//					});
+//					UserService.saveFacebook(data).then(function () {
+//						$state.go('menu.tabs.home');
+//					});
+//				});
+			}, function (fail) {
+				// Fail get profile info
+				console.log('profile info fail', fail);
+			});
+			$ionicLoading.hide();
+		}, function (error) {
+			console.warn(['FB connect error', error]);
+		})
+	}
+
+	// This method is to get the user profile info from the facebook api
+	var getFacebookProfileInfo = function (authResponse) {
+		console.log('FacebookService.getFacebookProfileInfo');
+		var deferred = $q.defer();
+
+		facebookConnectPlugin.api('/me?fields=email,first_name,last_name&access_token=' + authResponse.accessToken, null,
+			function (response) {
+				console.log(response);
+				deferred.resolve(response);
+			},
+			function (response) {
+				console.log(response);
+				deferred.reject(response);
+			}
+		);
+		return deferred.promise;
+	};
+})
+
 .service('PtrService', function ($timeout, $ionicScrollDelegate) {
 	/**
 	 * Trigger the pull-to-refresh on a specific scroll view delegate handle.
